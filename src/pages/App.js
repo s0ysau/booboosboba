@@ -1,10 +1,11 @@
 import './App.css';
+import StartPg from './StartPg';
 
-function App() {
+export default function App() {
   return (
     <>
+      <StartPg />
     </>
   );
 }
 
-export default App;

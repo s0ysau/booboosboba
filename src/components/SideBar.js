@@ -8,7 +8,6 @@ export default function SideBar () {
         <li>Speciality Drinks</li>
         <li>Tea</li>
         <li>Coffee</li>
-        <li>Customizable Drinks</li>
         <li>Caffine Free</li>
         <li>Seasonal Drinks</li>
         <li>Merch</li>

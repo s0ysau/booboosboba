@@ -3,12 +3,12 @@ import ItemsDisplay from "../components/ItemsDisplay";
 import SideBar from "../components/SideBar";
 
 
-export default function SelectionPg () {
+export default function SelectionPg ({products}) {
   return (
     <>
       <Header />
       <SideBar />
-      <ItemsDisplay />
+      <ItemsDisplay products={products}/>
     </>
   )
 }

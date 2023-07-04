@@ -1,0 +1,158 @@
+{
+  "category": [
+    {
+      "name": "Drinks",
+      "sortNumber": 10
+    },
+    {
+      "name": "Other",
+      "sortNumber": 20
+    }
+  ], 
+  "products": [
+    {
+      "id": 1,
+      "name": "Brown Sugar Milk Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Caffine Free", "Tea", "Brown Sugar"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 2,
+      "name": "Taro Milk Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Caffine Free", "Tea", "Taro"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 3,
+      "name": "Iced Matcha Latte",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Caffine Free", "Matcha"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 4,
+      "name": "Creme Brulee Milk Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Caffine Free", "Tea"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 5,
+      "name": "Fruit Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Fruit", "Tea"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 6,
+      "name": "Strawberry Milk Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Fruit"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 7,
+      "name": "Mango Sago",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Sago", "Caffine Free", "Fruit"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 8,
+      "name": "Strawberry Mango Sago",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Sago", "Caffine Free", "Fruit"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 9,
+      "name": "Iced Coffee",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Coffee"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 10,
+      "name": "Iced Latte",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Coffee"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 11,
+      "name": "Vietnamese Iced Coffee",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Coffee"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 12,
+      "name": "Thai Iced Tea",
+      "category": {
+        "name": "Drinks",
+        "sortNumber": 10
+      },
+      "tags": ["Milk", "Tea"],
+      "price": 8.00,
+      "img": "placeholder"
+    },
+    {
+      "id": 13,
+      "name": "Stickers",
+      "category": {
+        "name": "Other",
+        "sortNumber": 20
+      },
+      "tags": ["Merch"],
+      "price": 5.00,
+      "img": "placeholder"
+    }
+  ]
+}
+

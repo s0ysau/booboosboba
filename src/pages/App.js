@@ -1,15 +1,20 @@
-import './App.css';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import StartPg from './StartPg';
 import SelectionPg from './SelectionPg';
-import { useEffect, useState } from 'react';
+import './App.css';
 
 export default function App() {
   const [products, setProducts] = useState(null)
 
-  const getproducts = async () => {
+  const getProducts = async () => {
     try {
-      const response = await fetch (`http://localhost:8050/products`)
+      const response = await fetch(`http://localhost:8050/products/`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       const data = await response.json()
       setProducts(data)
     } catch (error) {
@@ -17,8 +22,8 @@ export default function App() {
     }
   }
 
-  useEffect = (() => {
-    getproducts()
+  useEffect(() => {
+    getProducts()
   }, [])
 
   return (

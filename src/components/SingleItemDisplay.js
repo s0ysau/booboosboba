@@ -1,12 +1,10 @@
 
-
-export default function SingleItemDisplay () {
+export default function SingleItemDisplay ({product}) {
   
   return (
-    <>
-      <h1>
-        Single Item
-      </h1>
-    </>
+    <div class='border-2'>
+      <p>{product.name}</p>
+      <p>{product.price}</p>
+    </div>
   )
 }

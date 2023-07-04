@@ -1,22 +1,17 @@
+import SingleItemDisplay from "./SingleItemDisplay"
 
 
 export default function ItemsDisplay ({products}) {
   return (
     <>
-      <h1>
-        ItemsDisplay
-      </h1>
       <div>
         {
           products ? (
           <ul>
             {
-              products.map((product) => {
+              products.map((product, id) => {
                 return (
-                  <>
-                    <p>{product.name}</p>
-                    <p>{product.price}</p>
-                  </>
+                  <SingleItemDisplay product={product} />
                 )
               })
             }

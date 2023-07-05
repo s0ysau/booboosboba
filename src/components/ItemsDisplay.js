@@ -7,7 +7,7 @@ export default function ItemsDisplay ({products}) {
       <div>
         {
           products ? (
-          <ul>
+          <ul class='grid grid-rows-4 grid-cols-3 '>
             {
               products.map((product, id) => {
                 return (

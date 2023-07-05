@@ -3,8 +3,7 @@
 export default function SideBar () {
   return (
     <>
-      <h1>Side Bar</h1>
-      <ul>
+      <ul class="w-48">
         <li>Speciality Drinks</li>
         <li>Tea</li>
         <li>Coffee</li>

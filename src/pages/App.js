@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import StartPg from './StartPg';
 import SelectionPg from './SelectionPg';
 import './App.css';
+import SingleItemDisplay from '../components/SingleItemDisplay';
 
 export default function App() {
   const [products, setProducts] = useState(null)
@@ -31,6 +32,8 @@ export default function App() {
       <Routes>
         <Route path='/' element={<StartPg />}/>
         <Route path='/order' element={<SelectionPg products={products}/>}/>
+        {/* <Route path={`/:name`/> */}
+        <Route path={`/:params`} element={<SingleItemDisplay products={products}/>}/>
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import SingleItemDisplay from "./SingleItemDisplay"
+import GridItemsDisplay from "./GridItemsDisplay"
 
 
 export default function ItemsDisplay ({products}) {
@@ -7,11 +7,11 @@ export default function ItemsDisplay ({products}) {
       <div>
         {
           products ? (
-          <ul class='grid grid-rows-4 grid-cols-3 '>
+          <ul class='grid grid-rows-4 grid-cols-3 gap-4'>
             {
               products.map((product, id) => {
                 return (
-                  <SingleItemDisplay product={product} />
+                  <GridItemsDisplay product={product} />
                 )
               })
             }

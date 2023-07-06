@@ -10,6 +10,7 @@ export default function SideBar () {
         <li>Caffine Free</li>
         <li>Seasonal Drinks</li>
         <li>Merch</li>
+        <button>Start Over</button>
       </ul>
     </>
   )

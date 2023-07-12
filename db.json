@@ -1,12 +1,28 @@
 {
   "category": [
     {
-      "name": "Drinks",
+      "name": "Speciality Drinks",
       "sortNumber": 10
     },
     {
-      "name": "Other",
+      "name": "Tea",
       "sortNumber": 20
+    },
+    {
+      "name": "Coffee",
+      "sortNumber": 30
+    },
+    {
+      "name": "Caffeine Free",
+      "sortNumber": 40
+    },
+    {
+      "name": "Seasonal Drinks",
+      "sortNumber": 50
+    },
+    {
+      "name": "Merch",
+      "sortNumber": 60
     }
   ], 
   "products": [

@@ -1,29 +1,28 @@
 import { useParams } from "react-router-dom"
-import ItemsDisplay from "../components/ItemsDisplay"
+import GridItemsDisplay from "../components/GridItemsDisplay"
 
 export default function CategoryPg ({products, category}) {
   const {name} = useParams()
 
-  
 
 
   return (
     <>
       <h1>{name}</h1>
-      {
-        products.tags ? 
+      {/* {
+        tags ? 
         (
           <ul>
             {
-              products.tags.filter(tag => tag == name).map((product) => {
+              tags.filter(tags => tags.includes({name})).map((product) => {
                 return (
-                  <ItemsDisplay product={product}/>
+                  // <GridItemsDisplay product={product}/>
                 )
               })
             }
           </ul>
         ) : null 
-      }
+      } */}
     </>
   )
 }

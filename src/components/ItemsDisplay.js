@@ -9,9 +9,11 @@ export default function ItemsDisplay ({products}) {
           products ? (
           <ul class='grid grid-rows-4 grid-cols-3 gap-4'>
             {
-              products.map((product, id) => {
+              products.map((product) => {
                 return (
-                  <GridItemsDisplay product={product} />
+                  <div key={product.id}>
+                    <GridItemsDisplay product={product} />
+                  </div>
                 )
               })
             }

@@ -12,7 +12,7 @@ export default function SideBar ({products, category}) {
                 category.map((item) => {
                   return (
                     <div key={item.sortNumber}>
-                      <Link to={`/category/${item.name}`} element={<CategoryPg products={products} category={category}/>}>
+                      <Link to={`/category/${item.name}`} element={<CategoryPg products={products} category={item}/>}>
                         {item.name}
                       </Link>
                     </div>

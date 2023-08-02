@@ -1,11 +1,12 @@
-# Getting Started with Create React App
+# Booboo's Boba 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using the MERN stack. 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Objective
 
+The objective of this project is to recreate a e-commerce self-service portal used in kiosk by restaurants for customers to place their order.
+<!-- 
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -67,4 +68,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

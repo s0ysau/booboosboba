@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import CategoryPg from "../pages/CategoryPg"
 
-export default function SideBar ({products, category}) {
+export default function SideBar ({category}) {
   return (
     <div className="w-48 border-4 border-green-500/75">
       <p>SideBar component</p>
@@ -13,7 +13,7 @@ export default function SideBar ({products, category}) {
                 category.map((item) => {
                   return (
                     <div key={item.sortNumber}>
-                      <Link to={`/category/${item.name}`} element={<CategoryPg products={products} category={item}/>}>
+                      <Link to={`/category/${item.name}`} element={<CategoryPg category={item}/>}>
                         {item.name}
                       </Link>
                     </div>

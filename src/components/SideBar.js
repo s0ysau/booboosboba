@@ -3,7 +3,8 @@ import CategoryPg from "../pages/CategoryPg"
 
 export default function SideBar ({products, category}) {
   return (
-    <div class="w-48 border-4 border-green-500/75">
+    <div className="w-48 border-4 border-green-500/75">
+      <p>SideBar component</p>
         {
           category ? 
           (

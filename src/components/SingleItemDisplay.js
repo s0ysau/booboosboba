@@ -13,7 +13,7 @@ export default function SingleItemDisplay ({products}) {
               products.filter(products => products.params == params).map((product) => {
                 return (
                   <div key={product.id}>
-                    <img src={product.img} alt={product.name} class="w-25 h-30"/>
+                    <img src={product.img} alt={product.name} className="w-25 h-30"/>
                     <h1>{product.name}</h1>
                     <p>{product.description}</p>
                     <h2>{product.price}</h2>

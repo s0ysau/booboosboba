@@ -2,9 +2,9 @@
 
 export default function Header () {
   return (
-    <div class="border-4 border-indigo-500/75">
-      <h1 class="h-16">
-        Header
+    <div className="border-4 border-indigo-500/75">
+      <h1 className="h-16">
+        Header component
       </h1>
       <p>CART</p>
     </div>

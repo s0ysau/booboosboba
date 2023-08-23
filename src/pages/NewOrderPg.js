@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar";
 
 
 export default function NewOrderPg () {
+  const [products, setProducts] = useState(null)
   const [category, setCategory] = useState(null)
 
   // useEffect (function () {
@@ -12,10 +13,19 @@ export default function NewOrderPg () {
   //     const products = await 
   //   }
   // })
+  const getProducts = async () => {
+    try {
+      const response = await fetch(`/api/products`)
+      const data = await response.json()
+      setProducts(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const getCategory = async () => {
     try {
-      const response = await fetch ('api/products')
+      const response = await fetch(`/api/category`)
       const data = await response.json()
       setCategory(data)
     } catch (error) {
@@ -24,8 +34,9 @@ export default function NewOrderPg () {
   }
 
   useEffect(() => {
+    getProducts()
     getCategory()
-  })
+  }, [])
 
   return (
     <>
@@ -35,8 +46,8 @@ export default function NewOrderPg () {
         <section className="grid grid-cols-3 gap-4">
           <SideBar category={category}/>
           <section className="col-span-2">
-            <ItemsDisplay />
-          </section>
+            <ItemsDisplay products={products}/>
+          </section>  
         </section>
       </div>
     </>

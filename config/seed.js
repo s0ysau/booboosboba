@@ -20,7 +20,7 @@ const Product = require('../models/products')
     {
       name: "Brown Sugar Milk Tea",
       category: categories[1],
-      tags: ["Milk", "Caffine Free", "Tea", "Brown Sugar"],
+      tags: ["Milk", "Caffeine Free", "Tea", "Brown Sugar"],
       price: 8.00,
       img: "images/brown_sugar_milk_tea.jpeg",
       params: "brown_sugar_milk_tea",
@@ -29,7 +29,7 @@ const Product = require('../models/products')
     {
       name: "Taro Milk Tea",
       category: categories[1],
-      tags: ["Milk", "Caffine Free", "Tea", "Taro"],
+      tags: ["Milk", "Caffeine Free", "Tea", "Taro"],
       price: 8.00,
       img: "images/taro-milk-bubble-tea.jpeg", 
       params: "taro_milk_tea",
@@ -38,7 +38,7 @@ const Product = require('../models/products')
     {
       name: "Iced Matcha Latte",
       category: categories[3],
-      tags: ["Milk", "Caffine Free", "Matcha"],
+      tags: ["Milk", "Caffeine Free", "Matcha"],
       price: 8.00,
       img: "placeholder", 
       params: "iced_matcha_latte",
@@ -47,7 +47,7 @@ const Product = require('../models/products')
     {
       name: "Creme Brulee Milk Tea",
       category: categories[3],
-      tags: ["Milk", "Caffine Free", "Tea"],
+      tags: ["Milk", "Caffeine Free", "Tea"],
       price: 8.00,
       img: "placeholder", 
       params: "creme_brulee_milk_tea",
@@ -74,7 +74,7 @@ const Product = require('../models/products')
     {
       name: "Mango Sago",
       category: categories[3],
-      tags: ["Sago", "Caffine Free", "Fruit"],
+      tags: ["Sago", "Caffeine Free", "Fruit"],
       price: 8.00,
       img: "placeholder", 
       params: "mango_sago",
@@ -83,7 +83,7 @@ const Product = require('../models/products')
     {
       name: "Strawberry Mango Sago",
       category: categories[3],
-      tags: ["Sago", "Caffine Free", "Fruit"],
+      tags: ["Sago", "Caffeine Free", "Fruit"],
       price: 8.00,
       img: "placeholder", 
       params: "strawberry_mango_sago",
@@ -98,7 +98,7 @@ const Product = require('../models/products')
       params: "iced_coffee",
       description: "Iced Coffee is a cool and invigorating beverage that celebrates the bold and robust flavors of coffee. This refreshing concoction begins with a smooth and full-bodied brewed coffee that is expertly chilled over ice. With each sip, the rich coffee flavors dance on your palate, awakening your senses and providing a burst of energy. The combination of the deep, earthy notes of the coffee and the icy chill creates a refreshing and revitalizing experience, making Iced Coffee the perfect companion for those seeking a cool caffeinated pick-me-up on a warm day."
     },
-    {,
+    {
       name: "Iced Latte",
       category: categories[2],
       tags: ["Coffee"],
@@ -107,7 +107,7 @@ const Product = require('../models/products')
       params: "iced_latte",
       description: "Iced Latte is a sophisticated and indulgent beverage that combines the smoothness of milk with the velvety richness of espresso. This elegant creation begins with a double shot of espresso, expertly extracted to perfection, poured over a generous amount of ice. As the espresso melds with the creamy milk, a harmonious balance of flavors emerges, creating a creamy and luxurious drink. The bold espresso provides a robust foundation, while the milk adds a silky smoothness, resulting in a refreshing and satisfying sip. Iced Latte is a delightful treat for coffee enthusiasts seeking a chilled and decadent coffee experience that is as pleasing to the eye as it is to the taste buds."
     },
-    {,
+    {
       name: "Vietnamese Iced Coffee",
       category: categories[2],
       tags: ["Coffee"],
@@ -116,7 +116,7 @@ const Product = require('../models/products')
       params: "vietnamese_iced_coffee",
       description: "Vietnamese Iced Coffee is an enchanting blend that captures the essence of Vietnam's coffee culture. This indulgent beverage starts with a strong, dark roast Vietnamese coffee, traditionally brewed using a stainless steel filter called a \"phin.\" As the hot coffee slowly drips into a glass filled with sweetened condensed milk, a mesmerizing combination is born. The result is a rich, velvety brew that beautifully balances the boldness of the coffee with the creamy sweetness of the condensed milk. Served over a tall glass of ice, Vietnamese Iced Coffee offers a refreshing and invigorating experience, allowing you to savor the harmonious interplay of flavors as you drift into a state of pure coffee bliss."
     },
-    {,
+    {
       name: "Thai Iced Tea",
       category: categories[1],
       tags: ["Milk", "Tea"],
@@ -125,7 +125,7 @@ const Product = require('../models/products')
       params: "thai_iced_tea", 
       description: "Thai Iced Tea is a captivating and vibrant concoction that epitomizes the flavors of Thailand. This delightful beverage is made by brewing strong black tea infused with aromatic spices, such as star anise and cardamom, which infuse it with a unique and alluring flavor. The brewed tea is then sweetened with condensed milk and generously poured over a glass filled with ice, creating a striking orange hue. Each sip reveals a delicate balance of the robust black tea, the creamy sweetness of the condensed milk, and the tantalizing notes of the spices. Thai Iced Tea is a refreshing and exotic drink that offers a harmonious fusion of flavors, providing a tantalizing taste of Thailand's vibrant culinary traditions."
     },
-    {,
+    {
       name: "Stickers",
       category: categories[5],
       tags: ["Merch"],

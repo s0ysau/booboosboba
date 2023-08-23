@@ -12,7 +12,7 @@ export default function ItemsDisplay ({products}) {
             {
               products.map((product) => {
                 return (
-                  <div key={product.id}>
+                  <div key={product._id}>
                     <GridItemsDisplay product={product} />
                   </div>
                 )

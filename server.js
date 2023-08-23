@@ -16,12 +16,13 @@ app.use((req, res, next) => {
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
-app.use('api/products', require('./routes/api/products'))
+app.use('/api/products', require('./routes/api/products'))
+app.use('/api/category', require('./routes/api/category'))
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 app.listen(PORT, () => {
-  console.log(`I am listening on ${PORT}`)
+  console.log(`I'm looking for boba on ${PORT}`)
 })

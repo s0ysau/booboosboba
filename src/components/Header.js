@@ -1,3 +1,4 @@
+import CartBtn from "./CartBtn";
 
 
 export default function Header () {
@@ -6,7 +7,7 @@ export default function Header () {
       <h1 className="h-16">
         Header component
       </h1>
-      <p>CART</p>
+      <CartBtn/>
     </div>
   )
 }

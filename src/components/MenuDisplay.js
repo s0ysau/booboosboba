@@ -1,10 +1,10 @@
 import GridItemsDisplay from "./GridItemsDisplay"
 
 
-export default function ItemsDisplay ({products}) {
+export default function MenuDisplay({products}) {
   return (
     <>
-    <p>Items Display component</p>
+    <p>Menu Display component</p>
       <div>
         {
           products ? (

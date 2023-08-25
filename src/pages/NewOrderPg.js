@@ -1,18 +1,13 @@
 import { useEffect, useState, useRef } from 'react';
 import Header from "../components/Header";
-import ItemsDisplay from "../components/ItemsDisplay";
+import MenuDisplay from "../components/MenuDisplay";
 import SideBar from "../components/SideBar";
 
 
 export default function NewOrderPg () {
   const [products, setProducts] = useState(null)
-  const [category, setCategory] = useState(null)
+  const [categories, setCategories] = useState(null)
 
-  // useEffect (function () {
-  //   async function getProducts () {
-  //     const products = await 
-  //   }
-  // })
   const getProducts = async () => {
     try {
       const response = await fetch(`/api/products`)
@@ -23,11 +18,11 @@ export default function NewOrderPg () {
     }
   }
 
-  const getCategory = async () => {
+  const getCategories = async () => {
     try {
       const response = await fetch(`/api/category`)
       const data = await response.json()
-      setCategory(data)
+      setCategories(data)
     } catch (error) {
       console.log(error)
     }
@@ -35,8 +30,12 @@ export default function NewOrderPg () {
 
   useEffect(() => {
     getProducts()
-    getCategory()
+    getCategories()
   }, [])
+
+  // useEffect(() => {
+  //   getCategories()
+  // }, [])
 
   return (
     <>
@@ -44,9 +43,9 @@ export default function NewOrderPg () {
       <div >
         <Header />
         <section className="grid grid-cols-3 gap-4">
-          <SideBar category={category}/>
+          <SideBar categories={categories}/>
           <section className="col-span-2">
-            <ItemsDisplay products={products}/>
+            <MenuDisplay products={products}/>
           </section>  
         </section>
       </div>

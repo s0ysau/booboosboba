@@ -1,25 +1,23 @@
 import { Link } from "react-router-dom"
 import CategoryPg from "../pages/CategoryPg"
 
-export default function SideBar ({category}) {
+export default function SideBar ({categories}) {
   return (
     <div className="w-48 border-4 border-green-500/75">
       <p>SideBar component</p>
+      <p>Logo placement</p>
       <div>
           {
-            category ? 
+            categories ? 
             (
               <ul>
                 {
-                  category.map((item) => {
+                  categories.map((category) => {
                     return (
-                      // <div key={item.sortNumber}>
-                      //   <Link to={`/category/${item.name}`} element={<CategoryPg category={item}/>}>
-                      //     {item.name}
-                      //   </Link>
-                      // </div>
-                      <div key={item._id}>
-                        <h1>{item.name}</h1>
+                      <div key={category.sortNumber}>
+                        <Link to={`/category/${category.name}`} element={<CategoryPg category={category}/>}>
+                          {category.name}
+                        </Link>
                       </div>
                     )
                   })

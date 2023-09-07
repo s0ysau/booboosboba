@@ -5,4 +5,4 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true
 })
 
-module.exports = mongoose.connection 
+module.exports = mongoose.connection

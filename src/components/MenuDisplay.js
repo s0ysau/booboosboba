@@ -1,15 +1,15 @@
-import GridItemsDisplay from "./GridItemsDisplay"
+import GridItemsDisplay from './GridItemsDisplay'
 
-
-export default function MenuDisplay({products}) {
+export default function MenuDisplay ({ products }) {
   return (
     <>
-    <p>Menu Display component</p>
+      <p>Menu Display component</p>
       <div>
         {
-          products ? (
-          <ul className='grid grid-rows-4 grid-cols-3 gap-4'>
-            {
+          products
+            ? (
+              <ul className='grid grid-rows-4 grid-cols-3 gap-4'>
+                {
               products.map((product) => {
                 return (
                   <div key={product._id}>
@@ -18,8 +18,9 @@ export default function MenuDisplay({products}) {
                 )
               })
             }
-          </ul>
-        ) : <p>No items to display</p>
+              </ul>
+              )
+            : <p>No items to display</p>
         }
       </div>
     </>

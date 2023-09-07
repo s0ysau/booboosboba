@@ -7,5 +7,4 @@ router.get('/', productsCtrl.index)
 // GET /api/products/:name
 router.get('/:name', productsCtrl.show)
 
-module.exports = router 
-
+module.exports = router

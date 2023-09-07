@@ -1,35 +1,38 @@
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
+export default function SingleItemDisplay ({ products }) {
+  const { params } = useParams()
 
-export default function SingleItemDisplay ({product}) {
-  const {params} = useParams()
   return (
     <>
-    {/* <p>{params}</p>
+      <p>{params}</p>
       {
-        product ? 
-        (
-          <section>
-            {
-              product.filter(product => product.name == params).map((product) => {
+        params
+          ? (
+            <section>
+              {
+              products.filter(element => element.params == params).map((element) => {
                 return (
-                  <div key={product._id}>
-                    <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.name} className="w-25 h-30"/>
-                    <h1>{product.name}</h1>
-                    <p>{product.description}</p>
-                    <h2>{product.price}</h2>
+                  <div key={element._id}>
+                    <img src={process.env.PUBLIC_URL + `${element.img}`} alt={element.name} className='w-25 h-30' />
+                    <h1>{element.name}</h1>
+                    <p>{element.description}</p>
+                    <h2>{element.price}</h2>
                   </div>
                 )
               })
             }
-          </section>
-        ) : "Error"
-      } */}
-      {
-        product ? 
-        (
-          <section>
-            {
+            </section>
+            )
+        // <p>true</p>
+          : 'Error'
+      }
+      {/* {
+        product
+          ? (
+            <section>
+              {
               product.map((item) => {
                 return (
                   <div key={item._id}>
@@ -38,9 +41,10 @@ export default function SingleItemDisplay ({product}) {
                 )
               })
             }
-          </section>
-        ) : "Error"
-      }
+            </section>
+            )
+          : 'Error'
+      } */}
     </>
   )
 }

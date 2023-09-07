@@ -5,7 +5,7 @@ module.exports = {
   show
 }
 
-async function index (req, res){
+async function index (req, res) {
   try {
     const products = await Product.find({})
     res.status(200).json(products)

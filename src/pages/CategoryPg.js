@@ -2,25 +2,45 @@ import { useParams } from 'react-router-dom'
 import GridItemsDisplay from '../components/GridItemsDisplay'
 
 export default function CategoryPg ({ products, category }) {
-  const { name } = useParams()
+  const { params } = useParams()
+  
 
   return (
     <>
-      <h1>{name}</h1>
-      {/* {
-        tags ?
+      <h1>{params}</h1>
+      {
+        products ?
+        // (
+        //   <ul>
+        //     {
+        //       products.map(product => product.tags)
+        //               .filter(tag => tag == params)
+        //               .map((item) => {
+        //         return (
+        //           <>
+        //             <GridItemsDisplay product={item}/>
+        //           </>
+        //         )
+        //       })
+        //     }
+        //   </ul>
+        // ) 
         (
           <ul>
             {
-              tags.filter(tags => tags.includes({name})).map((product) => {
+              products.map(product => product.tags).filter(tags => tags == params)
+              .map(ele => {
                 return (
-                  // <GridItemsDisplay product={product}/>
+                  <>
+                    <p>{ele}</p>
+                  </>
                 )
               })
             }
           </ul>
-        ) : null
-      } */}
+        ) 
+        : "error"
+      }
     </>
   )
 }

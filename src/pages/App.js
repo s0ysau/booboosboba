@@ -42,7 +42,7 @@ export default function App () {
         <Route path='/' element={<StartPg />} />
         <Route path='/order/new' element={<NewOrderPg products={products} categories={categories} />} />
         <Route path='/cart' element={<CartPg />} />
-        <Route path='/category/:params' element={<CategoryPg categories={categories} />} />
+        <Route path='/category/:params' element={<CategoryPg products={products} categories={categories} />} />
         <Route path='/:params' element={<SingleItemDisplay products={products} />} />
         <Route path='/*' element={<Navigate to='/order/new' />} />
       </Routes>

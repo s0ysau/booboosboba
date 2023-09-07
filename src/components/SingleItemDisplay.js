@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Counter from './Counter'
 
 export default function SingleItemDisplay ({ products }) {
   const { params } = useParams()
@@ -19,6 +20,8 @@ export default function SingleItemDisplay ({ products }) {
                     <h1>{element.name}</h1>
                     <p>{element.description}</p>
                     <h2>{element.price}</h2>
+                    {/* <p>{element.tags}</p> */}
+                    <Counter />
                   </div>
                 )
               })

@@ -8,7 +8,7 @@ export default function GridItemsDisplay ({ product }) {
         <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.name} class='w-20 h-25' />
         <p>{product.name}</p>
         <p>${product.price}.00</p>
-        {/* <p>{product.params}</p> */}
+        <p>{product.tags}</p>
       </Link>
     </div>
   )

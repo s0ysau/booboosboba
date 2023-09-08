@@ -13,12 +13,11 @@ export default function CategoryPg ({ products, category }) {
         // (
         //   <ul>
         //     {
-        //       products.map(product => product.tags)
-        //               .filter(tag => tag == params)
-        //               .map((item) => {
+        //       products.map(product => product.tags).filter(tags => tags == params)
+        //       .map(ele => {
         //         return (
         //           <>
-        //             <GridItemsDisplay product={item}/>
+        //             <p>{ele}</p>
         //           </>
         //         )
         //       })
@@ -28,17 +27,18 @@ export default function CategoryPg ({ products, category }) {
         (
           <ul>
             {
-              products.map(product => product.tags).filter(tags => tags == params)
-              .map(ele => {
-                return (
-                  <>
-                    <p>{ele}</p>
-                  </>
-                )
+              products.map(product => {
+                if (product.tags == params) {
+                  return (
+                    <>
+                      <GridItemsDisplay product={product} />
+                    </>
+                  )
+                } 
               })
             }
           </ul>
-        ) 
+        )
         : "error"
       }
     </>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import AddToCart from './AddToCart'
 import Counter from './Counter'
 
 export default function SingleItemDisplay ({ products }) {
@@ -21,7 +22,6 @@ export default function SingleItemDisplay ({ products }) {
                     <p>{element.description}</p>
                     <h2>{element.price}</h2>
                     {/* <p>{element.tags}</p> */}
-                    <Counter />
                   </div>
                 )
               })
@@ -31,23 +31,8 @@ export default function SingleItemDisplay ({ products }) {
         // <p>true</p>
           : 'Error'
       }
-      {/* {
-        product
-          ? (
-            <section>
-              {
-              product.map((item) => {
-                return (
-                  <div key={item._id}>
-                    <p>{item.name}</p>
-                  </div>
-                )
-              })
-            }
-            </section>
-            )
-          : 'Error'
-      } */}
+      <Counter />
+      <AddToCart />
     </>
   )
 }

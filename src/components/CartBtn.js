@@ -4,7 +4,7 @@ export default function CartBtn () {
   return (
     <>
       <Link to='/cart'>
-        <button>Cart</button>
+        <button className="mx-2">Cart</button>
       </Link>
     </>
   )

@@ -1,3 +1,4 @@
+import BackToMenuBtn from './BackToMenuBtn'
 import CartBtn from './CartBtn'
 
 export default function Header () {
@@ -6,7 +7,10 @@ export default function Header () {
       <h1 className='h-16'>
         Header component
       </h1>
-      <CartBtn />
+      <section className='flex justify-end'>
+        <CartBtn className=''/>
+        <BackToMenuBtn className='flex-1'/>
+      </section>
     </div>
   )
 }

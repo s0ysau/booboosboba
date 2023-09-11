@@ -7,7 +7,9 @@ const customerSchema = new Schema({
     type: Date,
     default: () => Date.now(),
     immutable: true
-  }
+  },
+  phone: { type: Number },
+  email: { type: String }
 })
 
 module.exports = mongoose.model('Customer', customerSchema)

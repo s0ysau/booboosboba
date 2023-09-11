@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AddToCart from './AddToCart'
+import BackToMenuBtn from './BackToMenuBtn'
 import Counter from './Counter'
 
 export default function SingleItemDisplay ({ products }) {
@@ -8,6 +9,7 @@ export default function SingleItemDisplay ({ products }) {
 
   return (
     <>
+      <BackToMenuBtn />
       <p>{params}</p>
       {
         params

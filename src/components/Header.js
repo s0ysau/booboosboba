@@ -8,8 +8,8 @@ export default function Header () {
         Header component
       </h1>
       <section className='flex justify-end'>
-        <CartBtn className=''/>
-        <BackToMenuBtn className='flex-1'/>
+        <CartBtn className='' />
+        <BackToMenuBtn className='flex-1' />
       </section>
     </div>
   )

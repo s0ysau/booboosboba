@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema 
+const Schema = mongoose.Schema
 const productsSchema = require('./products')
 
 const lineProductSchema = new Schema({
   qty: { type: Number, default: 1 },
   item: productsSchema
-},{
+}, {
   timestamps: true,
   toJSON: { virtuals: true }
 })
@@ -15,10 +15,10 @@ lineProductSchema.virtual('extPrice').get(function () {
 })
 
 const orderSchema = new Schema({
-  customer: { type: Schema.Types.ObjectId, ref: 'Customer'},
+  customer: { type: Schema.Types.ObjectId, ref: 'Customer' },
   lineItems: [lineProductSchema],
   isPaid: { type: Boolean, default: false }
-},{
+}, {
   timestamps: true,
   toJSON: { virtuals: true }
 })
@@ -33,15 +33,15 @@ orderSchema.virtual('totalQty').get(function () {
 
 orderSchema.virtual('orderId').get(function () {
   return this.id.slice(-6).toUpperCase()
-}) 
+})
 
 orderSchema.statics.getCart = function (customerId) {
   // 'this' is the order model
   return this.findOneAndUpdate(
-    //query 
-    {customer: customerId, isPaid: false},
-    // update 
-    {customer: customerId},
+    // query
+    { customer: customerId, isPaid: false },
+    // update
+    { customer: customerId },
     // upsert option will create the doc if
     // it doesn't exist
     { upsert: true, new: true }

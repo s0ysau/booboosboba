@@ -3,7 +3,7 @@ import CategoryPg from '../pages/CategoryPg'
 
 export default function SideBar ({ categories }) {
   return (
-    <div className='w-48 border-4 border-green-500/75'>
+    <div className='h-fit border-4 border-green-500/75'>
       <p>SideBar component</p>
       <p>Logo placement</p>
       <div>

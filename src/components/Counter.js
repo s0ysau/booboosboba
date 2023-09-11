@@ -8,21 +8,24 @@ export default function Counter () {
   }
 
   const subtracting = () => {
-    setCount(count - 1)
+    if (count > 0) {
+      setCount(count - 1)
+    }
   }
 
   return (
-    <>
-      <h1>Counter</h1>
+    <div className='flex flex-row gap-x-8'>
       <button
         onClick={subtracting}
+        className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
       >-
       </button>
       <div>{count}</div>
       <button
         onClick={adding}
+        className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
       >+
       </button>
-    </>
+    </div>
   )
 }

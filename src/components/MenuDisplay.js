@@ -4,7 +4,7 @@ export default function MenuDisplay ({ products }) {
   return (
     <>
       <p>Menu Display component</p>
-      <div>
+      <div className='overflow-y-auto h-fit'>
         {
           products
             ? (

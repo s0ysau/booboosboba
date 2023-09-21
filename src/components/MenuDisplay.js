@@ -1,4 +1,5 @@
-import GridItemsDisplay from './GridItemsDisplay'
+import { Link } from 'react-router-dom'
+import SingleItemDisplay from './SingleItemDisplay'
 
 export default function MenuDisplay ({ products }) {
   return (
@@ -12,8 +13,13 @@ export default function MenuDisplay ({ products }) {
                 {
               products.map((product) => {
                 return (
-                  <div key={product._id}>
-                    <GridItemsDisplay product={product} />
+                  <div key={product._id} className='h-full class border-2 drop-shadow-xl'>
+                    <Link to={`/${product.params}`} element={<SingleItemDisplay product={product} />}>
+                      <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.name} class='w-20 h-25' />
+                      <p>{product.name}</p>
+                      <p>${product.price}.00</p>
+                      <p>{product.tags}</p>
+                    </Link>
                   </div>
                 )
               })

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Counter () {
   const [count, setCount] = useState(0)
@@ -11,7 +11,11 @@ export default function Counter () {
     if (count > 0) {
       setCount(count - 1)
     }
-  }
+  } 
+
+  useEffect(() => {
+    setCount(1)
+  }, [])
 
   return (
     <div className='flex flex-row gap-x-8'>

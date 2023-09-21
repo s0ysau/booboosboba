@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
-import GridItemsDisplay from '../components/GridItemsDisplay'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import SingleItemDisplay from '../components/SingleItemDisplay'
 import Header from '../components/Header'
 import SideBar from '../components/SideBar'
 
@@ -16,16 +18,21 @@ export default function CategoryPg ({ products, categories }) {
         <h1>{params}</h1>
         <section className='col-span-2'>
           {
-            products
+            products 
               ? (
                 <ul>
                   {
                   products.map(product => {
                     if (product.tags == params) {
                       return (
-                        <div key={product.key}>
-                          <GridItemsDisplay product={product} />
-                        </div>
+                        <div key={product._id} className='h-full class border-2 drop-shadow-xl'>
+                        <Link to={`/${product.params}`} element={<SingleItemDisplay product={product} />}>
+                          <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.name} class='w-20 h-25' />
+                          <p>{product.name}</p>
+                          <p>${product.price}.00</p>
+                          <p>{product.tags}</p>
+                        </Link>
+                      </div>
                       )
                     }
                   })
@@ -39,3 +46,14 @@ export default function CategoryPg ({ products, categories }) {
     </>
   )
 }
+
+// return (
+//   <div key={product._id} className='h-full class border-2 drop-shadow-xl'>
+//   <Link to={`/${product.params}`} element={<SingleItemDisplay product={product} />}>
+//     <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.name} class='w-20 h-25' />
+//     <p>{product.name}</p>
+//     <p>${product.price}.00</p>
+//     <p>{product.tags}</p>
+//   </Link>
+// </div>
+// )

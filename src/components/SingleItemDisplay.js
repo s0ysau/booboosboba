@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom'
 import AddToCartBtn from './AddToCartBtn'
 import BackToMenuBtn from './BackToMenuBtn'
 import Counter from './Counter'
+import AddOns from './AddOns'
+import SweetnessLvl from './SweetnessLvl'
+import IceLvl from './IceLvl'
 
 export default function SingleItemDisplay ({ products }) {
   const { params } = useParams()
@@ -24,6 +27,9 @@ export default function SingleItemDisplay ({ products }) {
                       <h1 className='font-bold text-xl'>{element.name}</h1>
                       <p>{element.description}</p>
                       <h2 className='text-lg'>${element.price}.00</h2>
+                      <SweetnessLvl />
+                      <IceLvl />
+                      <AddOns />
                       <Counter />
                       <AddToCartBtn />
                     </section>

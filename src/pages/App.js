@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { categories, products, addOns, sweeetness, ice } from '../utilities/products-api'
 import StartPg from './StartPg'
 import NewOrderPg from './NewOrderPg'
 import SingleItemDisplay from '../components/SingleItemDisplay'
@@ -8,33 +9,35 @@ import CartPg from './CartPg'
 import './App.css'
 
 export default function App () {
-  const [products, setProducts] = useState(null)
-  const [categories, setCategories] = useState(null)
+  // const [products, setProducts] = useState(null)
+  // const [categories, setCategories] = useState(null)
 
-  const getProducts = async () => {
-    try {
-      const response = await fetch('/api/products')
-      const data = await response.json()
-      setProducts(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const getProducts = async () => {
+  //   try {
+  //     const response = await fetch('/api/products')
+  //     const data = await response.json()
+  //     setProducts(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
-  const getCategories = async () => {
-    try {
-      const response = await fetch('/api/category')
-      const data = await response.json()
-      setCategories(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const getCategories = async () => {
+  //   try {
+  //     const response = await fetch('/api/category')
+  //     const data = await response.json()
+  //     setCategories(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
-  useEffect(() => {
-    getProducts()
-    getCategories()
-  }, [])
+  // useEffect(() => {
+  //   getProducts()
+  //   getCategories()
+  // }, [])
+
+  // event handlers 
 
   return (
     <>

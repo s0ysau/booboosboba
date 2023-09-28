@@ -17,12 +17,13 @@ export default function AddOns () {
             {
               addOns.map((addOn) => {
                 return (
-                  <div key={addOn.id} className="flex">
-                      <p>{addOn.name}</p>
-                      <p>{addOn.price}</p>
+                  <div key={addOn.id} >
+                      <label className="flex ">{addOn.name} &nbsp;
+                      <p>${addOn.price}</p> &nbsp;
                       <input 
                       onClick={handleToppings}
                       type="checkbox" />
+                      </label>
                   </div>
                 )
               })

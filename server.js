@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 3005
 
 const app = express()
 
+// req.body 
 app.use(express.json())
+
 app.use((req, res, next) => {
   res.locals.data = {}
   next()
@@ -18,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 app.use('/api/products', require('./routes/api/products'))
 app.use('/api/category', require('./routes/api/category'))
+app.use('/api/order', require('./routes/api/order'))
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))

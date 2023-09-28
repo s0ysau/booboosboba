@@ -18,7 +18,7 @@ export default function SweetnessLvl () {
               sweetness.map((sweet) => {
                 return (
                   <div key={sweet.id} className="flex">
-                    <label>{sweet.name}
+                    <label>{sweet.name} &nbsp;
                     <input 
                     checked={sweet.id === sweetLevel}
                     onChange={() => handleSweetLevel(sweet.id)}

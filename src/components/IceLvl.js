@@ -18,7 +18,7 @@ export default function IceLvl () {
               ice.map((item) => {
                 return (
                   <div key={item.id} className="flex">
-                    <label>{item.name} 
+                    <label>{item.name} &nbsp;
                     <input 
                     checked={item.id === iceLevel}
                     onChange={() => handleIceLevel(item.id)}

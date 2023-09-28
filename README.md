@@ -6,6 +6,9 @@ This project was created using the MERN stack.
 ## Objective
 
 The objective of this project is to recreate a e-commerce self-service portal used in kiosk by restaurants for customers to place their order.
+
+09/29/2023: When products maps to product in MenuDisplay, product props does not pass down.
+
 <!-- 
 ### `npm start`
 

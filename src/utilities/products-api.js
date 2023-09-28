@@ -174,20 +174,24 @@ export const ice = [
     id: 320, 
     name: 'No Ice',
   },
+  {
+    id: 330,
+    name: 'Hot'
+  }
 ]
 
 export const sweetness = [
   {
     id: 400, 
-    name: 'Normal Sweet',
+    name: '100%',
   },
   {
     id: 410, 
-    name: '50% Sweet',
+    name: '50%',
   },
   {
     id: 420, 
-    name: '30% Sweet',
+    name: '30%',
   },
   {
     id: 430, 

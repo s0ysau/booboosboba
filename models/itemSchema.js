@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const item = require('./item')
 
-const productsSchema = new Schema({
+const Schema = require('mongoose').Schema
+
+const itemSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -17,4 +18,4 @@ const productsSchema = new Schema({
   description: String
 })
 
-module.exports = mongoose.model('Products', productsSchema)
+module.exports = itemSchema

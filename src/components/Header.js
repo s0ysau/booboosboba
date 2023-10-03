@@ -7,6 +7,7 @@ export default function Header () {
       <h1 className='h-16'>
         Header component
       </h1>
+      <input type='search' placeholder=' Search' className='w-1/2 ml-[10px] border-solid border-2 rounded-lg' />
       <section className='flex justify-end'>
         <CartBtn className='' />
         <BackToMenuBtn className='flex-1' />

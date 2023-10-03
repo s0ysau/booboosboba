@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import SingleItemDisplay from './SingleItemDisplay'
 
 export default function MenuDisplay({ products }) {
 
@@ -24,6 +23,7 @@ export default function MenuDisplay({ products }) {
                         <p>{product.name}</p>
                         <p>${product.price}.00</p>
                         <p>{product.tags}</p>
+                        <p>{product.id}</p>
                       </Link>
                     )
                   })

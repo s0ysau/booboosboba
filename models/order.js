@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const productsSchema = require('./products')
+const itemSchema = require('./itemSchema')
 
 const lineProductSchema = new Schema({
   qty: { type: Number, default: 1 },
-  item: productsSchema
+  item: itemSchema
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
@@ -55,14 +55,14 @@ orderSchema.methods.addItemToCart = async function (productId) {
   if (lineItem) {
     lineItem.qty += 1
   } else {
-    const item = await mongoose.model('Item').findById(productId)
+    const item = await mongoose.model('Product').findById(productId)
     cart.lineItems.push({ item })
   }
   return cart.save()
 }
 
 // Instance method to set an item's qty in the cart (will add item if does not exist)
-orderSchema.methods.setItemQty = function (productId, newQty) {
+orderSchema.methods.updateQty = function (productId, newQty) {
   // this keyword is bound to the cart (order doc)
   const cart = this
   // Find the line item in the cart for the menu item

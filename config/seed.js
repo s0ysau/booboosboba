@@ -2,7 +2,7 @@ require('dotenv').config()
 require('./database')
 
 const Category = require('../models/category')
-const Product = require('../models/products')
+const Item = require('../models/item')
 
 (async function () {
   await Category.deleteMany({})
@@ -15,8 +15,8 @@ const Product = require('../models/products')
     { name: 'Merch', sortNumber: 60 }
   ])
 
-  await Product.deleteMany({})
-  const products = await Product.create([
+  await Item.deleteMany({})
+  const Items = await Item.create([
     {
       name: 'Brown Sugar Milk Tea',
       category: categories[1],
@@ -135,6 +135,6 @@ const Product = require('../models/products')
       description: ''
     }
   ])
-  console.log(products)
+  console.log(items)
   process.exit()
 })

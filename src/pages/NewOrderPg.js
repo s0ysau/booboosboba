@@ -10,7 +10,7 @@ export default function NewOrderPg ({ products, categories }) {
         <Header />
         <section className='grid grid-cols-3 gap-4'>
           <div className='col-span-1'>
-            <SideBar categories={categories} />
+            {/* <SideBar categories={categories} /> */}
           </div>
           <section className='col-span-2'>
             <MenuDisplay products={products} />

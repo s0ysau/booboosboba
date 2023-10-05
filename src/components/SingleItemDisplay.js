@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { useParams, useLocation, Link } from 'react-router-dom'
+import {  useState } from 'react'
+import { useLocation, Link } from 'react-router-dom'
 import AddToCartBtn from './AddToCartBtn'
 import Counter from './Counter'
 import BackToMenuBtn from './BackToMenuBtn'
@@ -8,21 +8,9 @@ import SweetnessLvl from './SweetnessLvl'
 import IceLvl from './IceLvl'
 
 export default function SingleItemDisplay({handleAddToOrder}) {
-  // const [order, setOrder] = useState({
-  //   item: null,
-  //   price: 0,
-  //   qty: 0
-  // })
   const [count, setCount] = useState(1)
   const location = useLocation()
   const { value } = location.state
-
-
-  // const handleSubmit = () => {
-  //   setOrder({
-  //     qty: count
-  //   })
-  // }
 
 
   const adding = () => {
@@ -34,15 +22,6 @@ export default function SingleItemDisplay({handleAddToOrder}) {
       setCount(count - 1)
     }
   }
-
-  // useEffect(() => {
-  //   setOrder({
-  //     item: value.id,
-  //     price: value.price,
-  //   })
-  //   setCount(1)
-  // }, [])
-
 
 
   return (

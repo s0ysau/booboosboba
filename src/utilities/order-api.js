@@ -9,10 +9,10 @@ export function getCart () {
 }
 
 // Add an item to the cart
-export function addItemToCart (itemId) {
+export function addItemToCart (itemId, count) {
   // Just send itemId for best security (no pricing)
   // return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST')
-  return (`${BASE_URL}/cart/items/${itemId}}`)
+  return (`${BASE_URL}/cart/items?item=${itemId}&qty=${count}`)
 }
 
 // Update the item's qty in the cart

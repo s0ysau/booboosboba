@@ -1,5 +1,6 @@
 import {  useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import * as ordersAPI from '../utilities/order-api'
 import AddToCartBtn from './AddToCartBtn'
 import Counter from './Counter'
 import BackToMenuBtn from './BackToMenuBtn'
@@ -7,11 +8,16 @@ import AddOns from './AddOns'
 import SweetnessLvl from './SweetnessLvl'
 import IceLvl from './IceLvl'
 
-export default function SingleItemDisplay({handleAddToOrder}) {
+export default function SingleItemDisplay() {
   const [count, setCount] = useState(1)
   const location = useLocation()
   const { value } = location.state
-
+  
+  const [cart, setCart] = useState(null)
+  const handleAddToOrder = (itemId, count) => {
+    const updatedCart = ordersAPI.addItemToCart({item: itemId, qty: count})
+    setCart(updatedCart)
+  }
 
   const adding = () => {
     setCount(count + 1)
@@ -23,6 +29,7 @@ export default function SingleItemDisplay({handleAddToOrder}) {
     }
   }
 
+  console.log(cart)
 
   return (
     <>
@@ -58,8 +65,8 @@ export default function SingleItemDisplay({handleAddToOrder}) {
             {/* <AddToCartBtn /> */}
             <button
             //onChange={handleSubmit}
-              onClick={() => 
-                handleAddToOrder(value.id)
+              onClick={(evt) => 
+                handleAddToOrder(value.id, count)
               // console.log({item: value.id, qty: count})
             }
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'>Add To Cart

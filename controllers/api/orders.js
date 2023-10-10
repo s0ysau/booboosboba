@@ -20,7 +20,7 @@ async function cart (req, res){
 async function addToCart (req, res){
   try {
     const cart = await Order.addToCart(req.body)
-    await cart.addItemToCart(req.params.id)
+    await cart.addItemToCart(req.params.id, req.params.qty)
     res.status(200).json(cart)
   } catch (error) {
     res.status(400).json({ error: error.message })

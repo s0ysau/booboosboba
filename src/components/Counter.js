@@ -11,7 +11,7 @@ export default function Counter () {
     if (count > 0) {
       setCount(count - 1)
     }
-  } 
+  }
 
   useEffect(() => {
     setCount(1)

@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { sweetness } from "../utilities/products-api"
+import { useState } from 'react'
+import { sweetness } from '../utilities/products-api'
 
 export default function SweetnessLvl () {
   const [sweetLevel, setSweetLevel] = useState(null)
@@ -12,25 +12,27 @@ export default function SweetnessLvl () {
     <>
       <h1>Sweetness Level</h1>
       {
-        sweetness ? (
-          <ul>
-            {
+        sweetness
+          ? (
+            <ul>
+              {
               sweetness.map((sweet) => {
                 return (
-                  <div key={sweet.id} className="flex">
+                  <div key={sweet.id} className='flex'>
                     <label>{sweet.name} &nbsp;
-                    <input 
-                    checked={sweet.id === sweetLevel}
-                    onChange={() => handleSweetLevel(sweet.id)}
-                    type="checkbox"/>
+                      <input
+                        checked={sweet.id === sweetLevel}
+                        onChange={() => handleSweetLevel(sweet.id)}
+                        type='checkbox'
+                      />
                     </label>
                   </div>
                 )
               })
             }
-          </ul>
-        ) : 
-        "Error"
+            </ul>
+            )
+          : 'Error'
       }
     </>
   )

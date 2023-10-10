@@ -1,4 +1,4 @@
-import {  useState } from 'react'
+import { useState } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import * as ordersAPI from '../utilities/order-api'
 import AddToCartBtn from './AddToCartBtn'
@@ -8,14 +8,15 @@ import AddOns from './AddOns'
 import SweetnessLvl from './SweetnessLvl'
 import IceLvl from './IceLvl'
 
-export default function SingleItemDisplay() {
+export default function SingleItemDisplay () {
   const [count, setCount] = useState(1)
   const location = useLocation()
   const { value } = location.state
-  
+
   const [cart, setCart] = useState(null)
+
   const handleAddToOrder = (itemId, count) => {
-    const updatedCart = ordersAPI.addItemToCart({item: itemId, qty: count})
+    const updatedCart = ordersAPI.addItemToCart({ item: itemId, qty: count })
     setCart(updatedCart)
   }
 
@@ -64,12 +65,12 @@ export default function SingleItemDisplay() {
             </div>
             {/* <AddToCartBtn /> */}
             <button
-            //onChange={handleSubmit}
-              onClick={(evt) => 
+              onClick={(evt) =>
                 handleAddToOrder(value.id, count)
               // console.log({item: value.id, qty: count})
             }
-              className='rounded-full bg-sky-300 px-[10px] py-[5px]'>Add To Cart
+              className='rounded-full bg-sky-300 px-[10px] py-[5px]'
+            >Add To Cart
             </button>
           </section>
         </div>
@@ -77,7 +78,6 @@ export default function SingleItemDisplay() {
     </>
   )
 }
-
 
 // return (
 //   <>

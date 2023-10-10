@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3005
 
 const app = express()
 
-// req.body 
+// req.body
 app.use(express.json())
 
 app.use((req, res, next) => {

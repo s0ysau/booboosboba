@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { addOns } from "../utilities/products-api"
+import { useState } from 'react'
+import { addOns } from '../utilities/products-api'
 
 export default function AddOns () {
   const [toppings, setToppings] = useState(false)
@@ -12,25 +12,27 @@ export default function AddOns () {
     <>
       <h1>Add Ons</h1>
       {
-        addOns ? (
-          <ul>
-            {
+        addOns
+          ? (
+            <ul>
+              {
               addOns.map((addOn) => {
                 return (
-                  <div key={addOn.id} >
-                      <label className="flex ">{addOn.name} &nbsp;
+                  <div key={addOn.id}>
+                    <label className='flex '>{addOn.name} &nbsp;
                       <p>${addOn.price}</p> &nbsp;
-                      <input 
-                      onClick={handleToppings}
-                      type="checkbox" />
-                      </label>
+                      <input
+                        onClick={handleToppings}
+                        type='checkbox'
+                      />
+                    </label>
                   </div>
                 )
               })
             }
-          </ul>
-        ) :
-        "Error"
+            </ul>
+            )
+          : 'Error'
       }
     </>
   )

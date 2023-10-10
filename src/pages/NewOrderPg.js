@@ -24,14 +24,14 @@ export default function NewOrderPg ({ products }) {
     getCart()
   }, [])
 
-  // event handlers 
+  // event handlers
   // async function handleAddToOrder (itemId) {
   //   const updatedCart = ordersAPI.addItemToCart(itemId)
   //   setCart(updatedCart)
   // }
 
   const handleAddToOrder = (itemId, count) => {
-    const updatedCart = {item: itemId, qty: count}
+    const updatedCart = { item: itemId, qty: count }
     setCart(updatedCart)
   }
 
@@ -40,10 +40,10 @@ export default function NewOrderPg ({ products }) {
     setCart(updatedCart)
   }
 
-// async function handleCheckout () {
-//   await ordersAPI.checkout()
-//   navigate('/order')
-// }
+  // async function handleCheckout () {
+  //   await ordersAPI.checkout()
+  //   navigate('/order')
+  // }
 
   return (
     <>
@@ -55,8 +55,8 @@ export default function NewOrderPg ({ products }) {
             {/* <SideBar categories={categories} /> */}
           </div>
           <section className='col-span-2'>
-            <MenuDisplay 
-            products={products}
+            <MenuDisplay
+              products={products}
             // handleAddToOrder={handleAddToOrder}
             />
           </section>

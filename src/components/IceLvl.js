@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { ice } from "../utilities/products-api"
+import { useState } from 'react'
+import { ice } from '../utilities/products-api'
 
 export default function IceLvl () {
   const [iceLevel, setIceLevel] = useState(null)
@@ -12,24 +12,27 @@ export default function IceLvl () {
     <>
       <h1>Ice Level</h1>
       {
-        ice ? (
-          <ul>
-            {
+        ice
+          ? (
+            <ul>
+              {
               ice.map((item) => {
                 return (
-                  <div key={item.id} className="flex">
+                  <div key={item.id} className='flex'>
                     <label>{item.name} &nbsp;
-                    <input 
-                    checked={item.id === iceLevel}
-                    onChange={() => handleIceLevel(item.id)}
-                    type="checkbox" /></label>
+                      <input
+                        checked={item.id === iceLevel}
+                        onChange={() => handleIceLevel(item.id)}
+                        type='checkbox'
+                      />
+                    </label>
                   </div>
                 )
               })
             }
-          </ul>
-        ) : 
-        "Error"
+            </ul>
+            )
+          : 'Error'
       }
     </>
   )

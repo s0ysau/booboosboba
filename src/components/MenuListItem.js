@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-export default function MenuListItem({ product }) {
+export default function MenuListItem ({ product }) {
   return (
-    <Link 
-    to={`/${product.params}`}
-    state={{ value: product }}
+    <Link
+      to={`/${product.params}`}
+      state={{ value: product }}
     // handleAddToOrder={handleAddToOrder}
-    className='h-full class border-2 drop-shadow-xl'>
+      className='h-full class border-2 drop-shadow-xl'
+    >
       <img src={process.env.PUBLIC_URL + `${product.img}`} alt={product.id} className='w-20 h-25' />
       <p>{product.name}</p>
       <p>${product.price}.00</p>

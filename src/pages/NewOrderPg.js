@@ -50,18 +50,24 @@ export default function NewOrderPg ({ products }) {
       <p>New Order Page Component</p>
       <div>
         <Header />
-        <section className='grid grid-cols-3 gap-4'>
-          <div className='col-span-1'>
-            {/* <SideBar categories={categories} /> */}
-          </div>
-          <section className='col-span-2'>
+        <section >
             <MenuDisplay
               products={products}
-            // handleAddToOrder={handleAddToOrder}
             />
           </section>
-        </section>
       </div>
     </>
   )
 }
+
+{/* <section className='grid grid-cols-3 gap-4'>
+<div className='col-span-1'>
+  <SideBar categories={categories} />
+</div>
+<section className='col-span-2'>
+  <MenuDisplay
+    products={products}
+  handleAddToOrder={handleAddToOrder}
+  />
+</section>
+</section> */}

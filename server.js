@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 app.use('/api/items', require('./routes/api/items'))
 // app.use('/api/category', require('./routes/api/category'))
-app.use('/api/orders', require('./routes/api/orders'))
+app.use('/api/order', require('./routes/api/orders'))
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))

@@ -1,5 +1,3 @@
-import sendRequest from './send-request'
-
 const BASE_URL = '/api/order'
 
 // Retrieve an unpaid order for the logged in user
@@ -9,11 +7,11 @@ export function getCart () {
 }
 
 // Add an item to the cart
-export function addItemToCart (itemId, count) {
+export function addItemToCart (itemId) {
   // Just send itemId for best security (no pricing)
   // return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST')
-  // return (`${BASE_URL}/cart/items?item=${itemId}&qty=${count}`)
-  return sendRequest(`${BASE_URL}/cart/items?item=${itemId}&qty=${count}`, 'POST')
+  return (`${BASE_URL}/cart/items?item=${itemId}`, 'POST')
+  // return sendRequest(`${BASE_URL}/cart/items?item=${itemId}`, 'POST', { itemId })
 }
 
 // Update the item's qty in the cart

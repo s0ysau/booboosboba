@@ -1,10 +1,9 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const { Schema, model } = require('mongoose')
 const itemSchema = require('./itemSchema')
 
 const lineProductSchema = new Schema({
-  qty: { type: Number, default: 1 },
-  item: itemSchema
+  item: itemSchema,
+  qty: { type: Number, default: 1 }
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
@@ -78,4 +77,4 @@ const orderSchema = new Schema({
 //   return cart.save()
 // }
 
-module.exports = mongoose.model('Order', orderSchema)
+module.exports = model('Order', orderSchema)

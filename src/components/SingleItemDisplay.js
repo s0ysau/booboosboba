@@ -13,12 +13,28 @@ export default function SingleItemDisplay () {
   const location = useLocation()
   const { value } = location.state
 
-  const [cart, setCart] = useState(null)
+  const [cart, setCart] = useState({
+    item: "",
+    qty: 1
+  })
 
-  const handleAddToOrder = (itemId, count) => {
-    const updatedCart = ordersAPI.addItemToCart({ item: itemId, qty: count })
-    setCart(updatedCart)
+  const handleAddToOrder = async () => {
+    // const updatedCart = ordersAPI.addItemToCart( itemId )
+    // setCart(updatedCart)
+    try {
+      const response = await fetch(`/api/order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      setCart({
+        item: value.id,
+        qty: count
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
+
 
   const adding = () => {
     setCount(count + 1)
@@ -65,8 +81,8 @@ export default function SingleItemDisplay () {
             </div>
             {/* <AddToCartBtn /> */}
             <button
-              onClick={(evt) =>
-                handleAddToOrder(value.id, count)
+              onClick={() =>
+                handleAddToOrder(value.id)
               // console.log({item: value.id, qty: count})
             }
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'

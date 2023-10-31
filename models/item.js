@@ -1,7 +1,20 @@
-const mongoose = require('mongoose')
-// Ensure the Category model is processed by Mongoose
-require('./category')
+const {Schema, model} = require('mongoose')
 
-const itemSchema = require('./itemSchema')
+const itemSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  tags: [String],
+  price: {
+    type: Number,
+    required: true,
+    default: 0
+  },
+  img: String,
+  description: String
+})
 
-module.exports = mongoose.model('Item', itemSchema)
+const Item = model('Item', itemSchema)  
+module.exports = Item

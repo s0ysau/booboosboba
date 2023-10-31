@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const orderCtrl = require('../../controllers/api/orders')
 
-// POST - create cart - api/order
+// POST - create cart - api/order/
 router.post('/', orderCtrl.startCart)
 
 // GET - get cart - api/order/cart

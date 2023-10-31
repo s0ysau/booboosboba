@@ -10,15 +10,15 @@ module.exports = {
 // start an order (create a cart)
 
 async function startCart (req, res) {
-  Order.create(req.body, (err, createdOrder) => {
-    if (err){
+  Order.create(req.body)
+    .then((results) => {
+      res.json(results)
+    })
+    .catch((err) => {
       res.status(400).send({
         msg: err.message
       })
-    } else {
-      res.locals.data.order = createdOrder
-    }
-  })
+    })  
 }
 
 // start an order (create a cart)

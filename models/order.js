@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const lineProductSchema = new Schema({
-  itemIds: [{ type: Schema.Types.ObjectId, ref: 'Item' }],
+  itemIds: { type: Schema.Types.ObjectId, ref: 'Item' },
   qty: { type: Number, default: 1 }
 }, {
   timestamps: true,

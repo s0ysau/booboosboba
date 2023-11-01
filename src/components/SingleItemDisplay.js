@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation, Link , useNavigate } from 'react-router-dom'
 import * as ordersAPI from '../utilities/order-api'
 import AddToCartBtn from './AddToCartBtn'
 import Counter from './Counter'
@@ -12,9 +12,9 @@ export default function SingleItemDisplay () {
   const [count, setCount] = useState(1)
   const location = useLocation()
   const { value } = location.state
-
+  const navigate = useNavigate()
   const [cart, setCart] = useState({
-    item: "",
+    itemIds: "",
     qty: 1
   })
 
@@ -22,17 +22,18 @@ export default function SingleItemDisplay () {
     // const updatedCart = ordersAPI.addItemToCart( itemId )
     // setCart(updatedCart)
     try {
-      const response = await fetch(`/api/order`, {
+      const response = await fetch(`/api/order/cart`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
       })
-      setCart({
-        item: value.id,
+      setCart([{
+        itemIds: value.id,
         qty: count
-      })
+      }])
     } catch (error) {
       console.error(error)
     }
+    navigate(`/order`)
   }
 
 

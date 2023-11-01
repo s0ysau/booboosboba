@@ -2,9 +2,10 @@ const Order = require('../../models/order')
 
 module.exports = {
   startCart,
-  cart,
+  getCart,
   addToCart,
-  updateQty
+  updateQty,
+  removeCart
 }
 
 // start an order (create a cart)
@@ -20,28 +21,17 @@ async function startCart (req, res) {
       })
     })  
 }
-
 // start an order (create a cart)
 
-// a cart is the upaid order for a customer
-// async function cart (req, res) {
-//   try {
-//     const cart = await Order.getCart(req.order._id)
-//     res.status(200).json(cart)
-//   } catch (error) {
-//     res.status
-//   }
-// }
-
-async function cart (req, res){
-  Order.find({}, (err, foundOrders) => {
-    if (err) {
-      res.status(400).send({
+async function getCart (req, res){
+  Order.find({})
+  .then((results) => {
+    res.json(results)
+  })
+  .catch((err) => {
+    res.status(400).send({
       msg: err.message
-      })
-    } else {
-      res.locals.data.order = foundOrders
-    }
+    })
   })
 }
 // a cart is the upaid order for a customer
@@ -58,15 +48,15 @@ async function cart (req, res){
 // }
 
 async function addToCart (req, res){
-  Order.findById(req.params.id, req.body, {new : true}, (err, updatedOrder) => {
-    if (err){
-      res.status(400).send({
-        msg: err.message
-      })
-    } else {
-      res.locals.data.order = updatedOrder
-    }
+  Order.findByIdAndUpdate(req.params.id, req.body, {new : true})
+  .then((results) => {
+    res.json(results)
   })
+  .catch((err) => {
+    res.status(400).send({
+      msg: err.message
+    })
+})
 }
 // add product to cart
 
@@ -95,3 +85,19 @@ async function updateQty (req, res) {
 }
 
 // udpate quantity of product in cart
+
+// remove cart
+
+async function removeCart (req, res) {
+  Order.findByIdAndDelete(req.params.id, (err, deletedOrder) => {
+    if (err){
+      res.status(400).send({
+        msg: err.message
+      })
+    } else {
+      res.locals.data.order = deletedOrder
+    }
+  })
+}
+
+// remove cart

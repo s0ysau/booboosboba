@@ -2,10 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function StartPg () {
-  const [order, setOrder] = useState({
-    itemIds: null,
-    qty: 0
-  })
+  const [ order, setOrder ] = useState(null)
   const navigate = useNavigate()
 
 
@@ -16,8 +13,9 @@ export default function StartPg () {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          itemIds: [],
-          qty: 1
+          customer: null,
+          lineItems: [],
+          isPaid: false
         })
       })
       const data = await response.json()

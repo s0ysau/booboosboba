@@ -1,49 +1,32 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import * as ordersAPI from '../utilities/order-api'
-import * as itemsAPI from '../utilities/item-api'
+import { StateContext } from '../context/StateContext'
 import Header from '../components/Header'
 import MenuDisplay from '../components/MenuDisplay'
 import SideBar from '../components/SideBar'
 
 export default function NewOrderPg ({ products }) {
-  const [menuItem, setMenuItem] = useState([])
-  const [cart, setCart] = useState(null)
   const navigate = useNavigate()
+  const [ order, setOrder ] = useState(null)
+
+  const getOrder = async () => {
+    try {
+      const response = await fetch(`/api/order/`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      const data = await response.json()
+      setOrder(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
-    async function getItems () {
-      const items = await itemsAPI.getAll()
-      setMenuItem(items)
-    }
-    getItems()
-    async function getCart () {
-      const cart = await ordersAPI.getCart()
-      setCart(cart)
-    }
-    getCart()
+    getOrder()
   }, [])
 
-  // event handlers
-  // async function handleAddToOrder (itemId) {
-  //   const updatedCart = ordersAPI.addItemToCart(itemId)
-  //   setCart(updatedCart)
-  // }
-
-  const handleAddToOrder = (itemId, count) => {
-    const updatedCart = { item: itemId, qty: count }
-    setCart(updatedCart)
-  }
-
-  async function handleChangeQty (itemId, newQty) {
-    const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty)
-    setCart(updatedCart)
-  }
-
-  // async function handleCheckout () {
-  //   await ordersAPI.checkout()
-  //   navigate('/order')
-  // }
+  console.log({order})
 
   return (
     <>

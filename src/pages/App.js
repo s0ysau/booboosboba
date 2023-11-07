@@ -18,7 +18,7 @@ export default function App() {
           <Route path='/order/:id' element={<CartPg products={products} />} />
           {/* <Route path='/category/:params' element={<CategoryPg products={products} categories={categories} />} /> */}
           <Route path='/:params' element={<SingleItemDisplay products={products} />} />
-          <Route path='/*' element={<Navigate to='/' />} />
+          <Route path='/*' element={<Navigate to='/'/>} />
         </Routes>
       </StateProvider>
     </>

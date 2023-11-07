@@ -1,32 +1,33 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { StateContext } from '../context/StateContext'
 import Header from '../components/Header'
 import MenuDisplay from '../components/MenuDisplay'
 import SideBar from '../components/SideBar'
+import { StateContext } from '../context/StateContext'
 
 export default function NewOrderPg ({ products }) {
+  const [cart, setCart] = useState("")
   const navigate = useNavigate()
-  const [ order, setOrder ] = useState(null)
+  const [stateContext] = useContext(StateContext)
+  const { initialOrder, setInitialOrder } = stateContext
 
-  const getOrder = async () => {
+  const getCart = async (_id) => {
     try {
-      const response = await fetch(`/api/order/`, {
+      const response = await fetch(`/api/order/${_id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       })
       const data = await response.json()
-      setOrder(data)
+      setCart(data)
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
-    getOrder()
+    getCart()
   }, [])
 
-  console.log({order})
 
   return (
     <>
@@ -36,6 +37,7 @@ export default function NewOrderPg ({ products }) {
         <section >
             <MenuDisplay
               products={products}
+              
             />
           </section>
       </div>

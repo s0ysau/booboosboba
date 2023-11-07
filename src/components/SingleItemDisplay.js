@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, Link , useNavigate } from 'react-router-dom'
 import * as ordersAPI from '../utilities/order-api'
 import AddToCartBtn from './AddToCartBtn'
@@ -13,23 +13,20 @@ export default function SingleItemDisplay () {
   const location = useLocation()
   const { value } = location.state
   const navigate = useNavigate()
-  const [cart, setCart] = useState({
-    itemIds: "",
-    qty: 1
-  })
+
 
   const handleAddToOrder = async () => {
-    // const updatedCart = ordersAPI.addItemToCart( itemId )
-    // setCart(updatedCart)
     try {
       const response = await fetch(`/api/order/cart`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          itemIds: value.id,
+          qty: count
+        })
       })
-      setCart([{
-        itemIds: value.id,
-        qty: count
-      }])
+        const data = await response.json()  
+        // setCart(data)
     } catch (error) {
       console.error(error)
     }
@@ -47,7 +44,7 @@ export default function SingleItemDisplay () {
     }
   }
 
-  console.log(cart)
+
 
   return (
     <>

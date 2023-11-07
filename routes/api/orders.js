@@ -5,9 +5,12 @@ const orderCtrl = require('../../controllers/api/orders')
 // POST - create cart - api/order/
 router.post('/', orderCtrl.startCart)
 
-// GET - get cart - api/order/:id
-// :id is the order id
+// GET - get cart - api/order/
 router.get('/', orderCtrl.getCart)
+
+// SHOW - show cart - api/order/:id
+// :id is the order id
+router.get('/:id', orderCtrl.showCart)
 
 // POST - add item to cart - api/order/cart/:id
 router.post('/cart', orderCtrl.addToCart)

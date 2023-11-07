@@ -26,7 +26,7 @@ export default function CartPg ({ cart, products, handleChangeQty }) {
     <>
       <BackToMenuBtn />
       <h1>Cart Page</h1>
-
+      <p>{order}</p>
     </>
   )
 }

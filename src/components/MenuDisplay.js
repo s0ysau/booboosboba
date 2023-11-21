@@ -4,7 +4,6 @@ export default function MenuDisplay ({ products }) {
   const item = products.map(item =>
     <MenuListItem
       key={item.id}
-    // handleAddToOrder={handleAddToOrder}
       product={item}
     />
   )

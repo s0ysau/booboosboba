@@ -1,29 +1,29 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
-export default function StartOverBtn ({cart}){
+export default function StartOverBtn ({ cart }) {
   const navigate = useNavigate()
 
-  const handleStartOrder =  async () => {
+  const handleStartOrder = async () => {
     try {
       await fetch(`/api/order/${cart.Id}`,
-      {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-      })
+        {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' }
+        })
       // setOrder(!order)
     } catch (error) {
       console.error(error)
     }
-    navigate(`/`)
+    navigate('/')
   }
 
   return (
     <>
       <button
-      onClick={() => 
-      handleStartOrder()
-      }
-      >Start Over</button>
+        onClick={() =>
+          handleStartOrder()}
+      >Start Over
+      </button>
     </>
   )
 }

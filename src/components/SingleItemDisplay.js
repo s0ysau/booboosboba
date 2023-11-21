@@ -1,39 +1,39 @@
-import { useEffect, useState } from 'react'
-import { useLocation, Link , useNavigate } from 'react-router-dom'
-import * as ordersAPI from '../utilities/order-api'
-import AddToCartBtn from './AddToCartBtn'
-import Counter from './Counter'
+import { useContext, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+// import * as ordersAPI from '../utilities/order-api'
+// import AddToCartBtn from './AddToCartBtn'
+// import Counter from './Counter'
 import BackToMenuBtn from './BackToMenuBtn'
-import AddOns from './AddOns'
-import SweetnessLvl from './SweetnessLvl'
-import IceLvl from './IceLvl'
+import { StateContext } from '../context/StateContext'
+// import AddOns from './AddOns'
+// import SweetnessLvl from './SweetnessLvl'
+// import IceLvl from './IceLvl'
 
 export default function SingleItemDisplay () {
   const [count, setCount] = useState(1)
+  const { addToCart } = useContext(StateContext)
   const location = useLocation()
   const { value } = location.state
   const navigate = useNavigate()
 
-
-  const handleAddToOrder = async () => {
-    try {
-      const response = await fetch(`/api/order/cart`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          itemIds: value.id,
-          qty: count
-        })
-      })
-        const data = await response.json()  
-        // setCart(data)
-    } catch (error) {
-      console.error(error)
-    }
-    navigate(`/order`)
-    console.log({item: value.id, qty: count})
-  }
-
+  // const handleAddToCart = async () => {
+  //   try {
+  //     const response = await fetch(`/api/order/cart`, {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({
+  //         itemIds: value.id,
+  //         qty: count
+  //       })
+  //     })
+  //       const data = await response.json()
+  //       // setCart(data)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  //   navigate(`/order`)
+  //   console.log({item: value.id, qty: count})
+  // }
 
   const adding = () => {
     setCount(count + 1)
@@ -44,8 +44,6 @@ export default function SingleItemDisplay () {
       setCount(count - 1)
     }
   }
-
-
 
   return (
     <>
@@ -59,11 +57,11 @@ export default function SingleItemDisplay () {
             <h1 className='font-bold text-xl'>{value.name}</h1>
             <p>{value.description}</p>
             <h2 className='text-lg'>${value.price}.00</h2>
-            <section>
+            {/* <section>
               <SweetnessLvl />
               <IceLvl />
             </section>
-            <AddOns />
+            <AddOns /> */}
             {/* <Counter /> */}
             <div className='flex flex-row gap-x-8'>
               <button
@@ -81,7 +79,7 @@ export default function SingleItemDisplay () {
             {/* <AddToCartBtn /> */}
             <button
               onClick={() =>
-                handleAddToOrder()
+                addToCart(value.id)
               // console.log({item: value.id, qty: count})
             }
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'

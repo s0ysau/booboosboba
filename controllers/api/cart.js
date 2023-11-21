@@ -1,12 +1,27 @@
 const Order = require('../../models/order')
 
 module.exports = {
+  getCart,
   addToCart,
   updateQty,
   removeProduct
 }
 
 /* ----------------- LINE PRODUCT ----------------- */
+
+// a cart is the upaid order for a customer
+async function getCart (req, res) {
+  Order.findById(req.params.id)
+    .then((results) => {
+      res.json(results)
+    })
+    .catch((err) => {
+      res.status(400).send({
+        msg: err.message
+      })
+    })
+}
+// a cart is the upaid order for a customer
 
 // add product to cart
 async function addToCart (req, res) {
@@ -19,8 +34,8 @@ async function addToCart (req, res) {
 
     // Create new line product
     const newProduct = {
-      itemsIds : cartData.itemIds,
-      qty : cartData.qty
+      itemsIds: cartData.itemIds,
+      qty: cartData.qty
     }
     // add new line product to line product array
     order.lineItems.push(newProduct)
@@ -36,10 +51,10 @@ async function addToCart (req, res) {
 // add product to cart
 
 // udpate quantity of product in cart
-async function updateQty (req, res){
+async function updateQty (req, res) {
   try {
     const orderId = req.params.id
-    const cartId  = req.params.cartId
+    const cartId = req.params.cartId
     const cartData = req.body
 
     const order = await Order.findById(orderId)
@@ -49,8 +64,8 @@ async function updateQty (req, res){
     if (!cart) throw new Error('Item not found')
 
     const newProduct = {
-      itemsIds : cartData.itemIds,
-      qty : cartData.qty
+      itemsIds: cartData.itemIds,
+      qty: cartData.qty
     }
     order.lineItems.push(newProduct)
     await order.save()
@@ -66,7 +81,7 @@ async function updateQty (req, res){
 async function removeProduct (req, res) {
   try {
     const orderId = req.params.id
-    const cartId  = req.params.cartId
+    const cartId = req.params.cartId
 
     const order = await Order.findById(orderId)
     if (!order) throw new Error('Order not found')

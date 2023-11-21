@@ -1,22 +1,40 @@
-import React, { createContext, useState, useReducer } from 'react';
-export const StateContext = createContext();
+import React, { createContext, useState, useReducer } from 'react'
+import { products } from '../utilities/products-api'
+export const StateContext = createContext()
+
 // export const StateDispatchContext = createContext();
 
-export const StateProvider = (props) => {
-  // const [order, dispatch] = useReducer(orderReducer, initialOrder) 
+const getDefaultCart = () => {
+  const cart = {}
+  for (let i = 100; i < products.length + 1; i++) {
+    cart[i] = 0
+  }
+  return cart
+}
 
-  const [initialOrder, setInitialOrder] = useState(null)
+export const StateProvider = (props) => {
+  const [cartItems, setCartItems] = useState(getDefaultCart())
+
+  const addToCart = (productId) => {
+    setCartItems((prev) => ({ ...prev, [productId]: prev[productId] + 1 }))
+  }
+
+  const removeFromCart = (productId) => {
+    setCartItems((prev) => ({ ...prev, [productId]: prev[productId] - 1 }))
+  }
 
   const stateContext = {
-    initialOrder: initialOrder,
-    setInitialOrder: setInitialOrder
+    cartItems,
+    addToCart,
+    removeFromCart
   }
-  
+
+  console.log(cartItems)
 
   return (
     <StateContext.Provider value={[stateContext]}>
       {/* <StateDispatchContext.Provider value={dispatch}> */}
-        {props.children}
+      {props.children}
       {/* </StateDispatchContext.Provider> */}
     </StateContext.Provider>
   )
@@ -55,7 +73,7 @@ export const StateProvider = (props) => {
 //       action.state(data)
 //       break
 //     }
-  
+
 //     default: {
 //       throw Error('Unknown action: ' + action.type);
 //     }

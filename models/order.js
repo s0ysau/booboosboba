@@ -17,7 +17,6 @@ const orderSchema = new Schema({
   toJSON: { virtuals: true }
 })
 
-
 const Order = model('Order', orderSchema)
 
 module.exports = Order

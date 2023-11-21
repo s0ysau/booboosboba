@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
 
-
-export default function CartBtn ({cart}) {
-  
-
+export default function CartBtn ({ cart }) {
   return (
     <>
-      <Link to={`/order/cart`}>
+      <Link to='/cart'>
         <button className='mx-2'>Cart</button>
       </Link>
     </>

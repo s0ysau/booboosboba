@@ -6,7 +6,7 @@ export default function CartBtn ({cart}) {
 
   return (
     <>
-      <Link to={`/order/`}>
+      <Link to={`/order/cart`}>
         <button className='mx-2'>Cart</button>
       </Link>
     </>

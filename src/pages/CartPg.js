@@ -7,7 +7,7 @@ export default function CartPg ({ cart, products, handleChangeQty }) {
 
   const getOrder = async (id) => {
     try {
-      const response = await fetch(`api/order/${id}`, {
+      const response = await fetch(`api/cart/${id}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       })

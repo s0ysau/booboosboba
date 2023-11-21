@@ -31,6 +31,7 @@ export default function SingleItemDisplay () {
       console.error(error)
     }
     navigate(`/order`)
+    console.log({item: value.id, qty: count})
   }
 
 
@@ -80,7 +81,7 @@ export default function SingleItemDisplay () {
             {/* <AddToCartBtn /> */}
             <button
               onClick={() =>
-                handleAddToOrder(value.id)
+                handleAddToOrder()
               // console.log({item: value.id, qty: count})
             }
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'

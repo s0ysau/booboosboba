@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 app.use('/api/items', require('./routes/api/items'))
 // app.use('/api/category', require('./routes/api/category'))
 app.use('/api/order', require('./routes/api/orders'))
+app.use('/api/cart', require('./routes/api/cart'))
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))

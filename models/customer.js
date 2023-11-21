@@ -8,7 +8,7 @@ const customerSchema = new Schema({
     default: () => Date.now(),
     immutable: true
   },
-  phone: { type: Number },
+  phone: { type: Number, required: true, unique: true },
   email: { type: String }
 })
 

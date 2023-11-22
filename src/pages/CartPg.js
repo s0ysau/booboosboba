@@ -36,9 +36,7 @@ export default function CartPg () {
             if (cartItems[product.id] !== 0){
               return <CartItem key={product.id} product={product} />
             } 
-          }
-          
-          )
+          })
         } 
       </div>
     </>

@@ -16,24 +16,26 @@ export default function SingleItemDisplay () {
   const { value } = location.state
   const navigate = useNavigate()
 
-  // const handleAddToCart = async () => {
-  //   try {
-  //     const response = await fetch(`/api/order/cart`, {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({
-  //         itemIds: value.id,
-  //         qty: count
-  //       })
-  //     })
-  //       const data = await response.json()
-  //       // setCart(data)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  //   navigate(`/order`)
-  //   console.log({item: value.id, qty: count})
-  // }
+  const handleAddToCart = async () => {
+    // try {
+    //   const response = await fetch(`/api/order/cart`, {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({
+    //       itemIds: value.id,
+    //       qty: count
+    //     })
+    //   })
+    //     const data = await response.json()
+    //     // setCart(data)
+    // } catch (error) {
+    //   console.error(error)
+    // }
+    // navigate(`/order`)
+    // console.log({item: value.id, qty: count})
+    addToCart(value.id)
+    navigate(`/order`)
+  }
 
   const adding = () => {
     setCount(count + 1)
@@ -79,8 +81,8 @@ export default function SingleItemDisplay () {
             {/* <AddToCartBtn /> */}
             <button
               onClick={() =>
-                addToCart(value.id)
-              // console.log({item: value.id, qty: count})
+                // addToCart(value.id)
+                handleAddToCart()
             }
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'
             >Add To Cart

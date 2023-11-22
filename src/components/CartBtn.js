@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import { CgShoppingCart } from 'react-icons/cg'
 
 export default function CartBtn ({ cart }) {
   return (
     <>
       <Link to='/cart'>
-        <button className='mx-2'>Cart</button>
+        <CgShoppingCart size={30} />  
       </Link>
     </>
   )

@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-// import * as ordersAPI from '../utilities/order-api'
 // import AddToCartBtn from './AddToCartBtn'
-// import Counter from './Counter'
+import Counter from './Counter'
 import BackToMenuBtn from './BackToMenuBtn'
 import { ShopContext } from '../context/StateContext'
 // import AddOns from './AddOns'
@@ -10,42 +9,16 @@ import { ShopContext } from '../context/StateContext'
 // import IceLvl from './IceLvl'
 
 export default function SingleItemDisplay () {
-  const [count, setCount] = useState(1)
-  const { addToCart } = useContext(ShopContext)
+  const { cartItems, addToCart } = useContext(ShopContext)
   const location = useLocation()
   const { value } = location.state
   const navigate = useNavigate()
 
   const handleAddToCart = async () => {
-    // try {
-    //   const response = await fetch(`/api/order/cart`, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({
-    //       itemIds: value.id,
-    //       qty: count
-    //     })
-    //   })
-    //     const data = await response.json()
-    //     // setCart(data)
-    // } catch (error) {
-    //   console.error(error)
-    // }
-    // navigate(`/order`)
-    // console.log({item: value.id, qty: count})
     addToCart(value.id)
     navigate(`/order`)
   }
 
-  const adding = () => {
-    setCount(count + 1)
-  }
-
-  const subtracting = () => {
-    if (count >= 1) {
-      setCount(count - 1)
-    }
-  }
 
   return (
     <>
@@ -64,30 +37,10 @@ export default function SingleItemDisplay () {
               <IceLvl />
             </section>
             <AddOns /> */}
-            {/* <Counter /> */}
-            <div className='flex flex-row gap-x-8'>
-              <button
-                onClick={subtracting}
-                className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
-              >-
-              </button>
-              <div>{count}</div>
-              <button
-                onClick={adding}
-                className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
-              >+
-              </button>
-            </div>
-            {/* <AddToCartBtn /> */}
-            <button
-              onClick={() =>
-                // addToCart(value.id)
-                handleAddToCart()
-            }
+            {/* <Counter product={value}/> */}
+            <button onClick={() => handleAddToCart()}
               className='rounded-full bg-sky-300 px-[10px] py-[5px]'
-            >Add To Cart
-
-            </button>
+            >Add To Cart</button>
           </section>
         </div>
       </section>

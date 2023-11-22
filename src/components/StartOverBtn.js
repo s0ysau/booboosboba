@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/StateContext'
 
-export default function StartOverBtn ({ cart }) {
-  const { emptyCart } = useContext(ShopContext)
+export default function StartOverBtn ({ products }) {
+  const { cartItems, emptyCart } = useContext(ShopContext)
   const navigate = useNavigate()
 
   // const handleStartOrder = async () => {

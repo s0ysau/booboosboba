@@ -28,7 +28,6 @@ export default function NewOrderPg ({ products }) {
 
   return (
     <>
-      <p>New Order Page Component</p>
       <div>
         <Header />
         <section>

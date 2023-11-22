@@ -1,32 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { ShopContext } from '../context/StateContext'
 
-export default function Counter () {
-  const [count, setCount] = useState(0)
-
-  const adding = () => {
-    setCount(count + 1)
-  }
-
-  const subtracting = () => {
-    if (count > 0) {
-      setCount(count - 1)
-    }
-  }
-
-  useEffect(() => {
-    setCount(1)
-  }, [])
+export default function Counter ({product}) {
+  const { cartItems, addToCart, removeFromCart } = useContext(ShopContext)
+  const { id } = product
 
   return (
     <div className='flex flex-row gap-x-8'>
       <button
-        onClick={subtracting}
+        onClick={() => removeFromCart(id)}
         className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
       >-
       </button>
-      <div>{count}</div>
+      <input value={cartItems[id]}
+      className='w-7 h-7 text-center'
+      />
       <button
-        onClick={adding}
+        onClick={() => addToCart(id)}
         className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
       >+
       </button>

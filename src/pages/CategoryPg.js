@@ -8,7 +8,6 @@ export default function CategoryPg ({ products, categories }) {
   const { params } = useParams()
 
   return (
-    <>
       <div>
         <Header />
         <section className='grid grid-cols-3 gap-4'>
@@ -42,7 +41,6 @@ export default function CategoryPg ({ products, categories }) {
           }
         </section>
       </div>
-    </>
   )
 }
 

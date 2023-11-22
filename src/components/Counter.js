@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ShopContext } from '../context/StateContext'
 
-export default function Counter ({product}) {
+export default function Counter ({ product }) {
   const { cartItems, addToCart, removeFromCart } = useContext(ShopContext)
   const { id } = product
 
@@ -12,8 +12,9 @@ export default function Counter ({product}) {
         className=' bg-sky-300 w-7 h-7 rounded-full flex justify-center items-center'
       >-
       </button>
-      <input value={cartItems[id]}
-      className='w-7 h-7 text-center'
+      <input
+        value={cartItems[id]}
+        className='w-7 h-7 text-center'
       />
       <button
         onClick={() => addToCart(id)}

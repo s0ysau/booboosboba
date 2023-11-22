@@ -1,29 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function StartPg () {
-  // const [order, setOrder] = useState(null)
   const navigate = useNavigate()
-
-  // const handleStartOrder = async () => {
-  //   try {
-  //     const response = await fetch('/api/order/',
-  //       {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify({
-  //           customer: null,
-  //           lineItems: [],
-  //           isPaid: false
-  //         })
-  //       })
-  //     const data = await response.json()
-  //     setOrder(data)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  //   navigate('/order')
-  // }
 
   return (
     <>

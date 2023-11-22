@@ -5,22 +5,21 @@ export const ShopContext = createContext()
 // export const StateDispatchContext = createContext();
 
 const getDefaultCart = () => {
-  let cart = {}
+  const cart = {}
   for (let i = 1; i < products.length + 1; i++) {
     cart[i] = 0
   }
   return cart
 }
 
-
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart())
 
   const getTotalAmount = () => {
     let totalAmount = 0
-    for (const item in cartItems){
-      if (cartItems[item] > 0){
-        let itemInfo = products.find((product) => product.id === Number(item))
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        const itemInfo = products.find((product) => product.id === Number(item))
         totalAmount += itemInfo.price * cartItems[item]
       }
     }
@@ -36,7 +35,7 @@ export const ShopContextProvider = (props) => {
   }
 
   const emptyCart = (productId) => {
-    setCartItems((prev) => ({ ...prev, [productId]: prev[productId] - prev[productId]}))
+    setCartItems((prev) => ({ ...prev, [productId]: prev[productId] - prev[productId] }))
   }
 
   const contextValue = {

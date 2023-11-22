@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
-
-export default function ContShopBtn() {
+export default function ContShopBtn () {
   return (
     <section>
       <Link to='/order'>
@@ -14,6 +13,3 @@ export default function ContShopBtn() {
     </section>
   )
 }
-
-
-

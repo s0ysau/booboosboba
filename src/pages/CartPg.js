@@ -7,15 +7,13 @@ import StartOverBtn from '../components/StartOverBtn'
 import CheckoutBtn from '../components/CheckoutBtn'
 import ContShopBtn from '../components/ContShopBtn'
 
-export default function CartPg() {
+export default function CartPg () {
   const { cartItems, getTotalAmount } = useContext(ShopContext)
   const totalAmount = getTotalAmount()
 
-
-
   return (
     <>
-      <h1>Cart Page</h1>
+      <h1>Your Cart</h1>
       <div>
         {
           products.map((product) => {
@@ -26,20 +24,22 @@ export default function CartPg() {
         }
       </div>
       {
-        totalAmount > 0 ? (
-          <div>
-            <p>Subtotal: ${totalAmount}</p>
-            <StartOverBtn products={products} />
-            <ContShopBtn />
-            <CheckoutBtn />
-          </div>
+        totalAmount > 0
+          ? (
+            <div>
+              <p>Subtotal: ${totalAmount}</p>
+              <StartOverBtn products={products} />
+              <ContShopBtn />
+              <CheckoutBtn />
+            </div>
 
-        ) : (
-          <div>
-            <h1>Your cart is empty</h1>
-            <ContShopBtn />
-          </div>
-        )
+            )
+          : (
+            <div>
+              <BackToMenuBtn />
+              <h1>Your cart is empty</h1>
+            </div>
+            )
       }
 
     </>

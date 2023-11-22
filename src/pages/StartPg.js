@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { StateContext } from '../context/StateContext'
 
 export default function StartPg () {
   const [order, setOrder] = useState(null)
   const navigate = useNavigate()
-  const [stateContext] = useContext(StateContext)
 
   const handleStartOrder = async () => {
     try {

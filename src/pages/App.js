@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { StateProvider } from '../context/StateContext'
+import { ShopContextProvider } from '../context/StateContext'
 import { products } from '../utilities/products-api'
 import StartPg from './StartPg'
 import NewOrderPg from './NewOrderPg'
@@ -9,7 +9,7 @@ import './App.css'
 
 export default function App() {
   return (
-    <StateProvider>
+    <ShopContextProvider>
       <Routes>
         <Route path='/' element={<StartPg />} />
         <Route path='/order' element={<NewOrderPg products={products} />} />
@@ -17,6 +17,6 @@ export default function App() {
         <Route path='/:params' element={<SingleItemDisplay products={products} />} />
         <Route path='/*' element={<Navigate to='/' />} />
       </Routes>
-    </StateProvider>
+    </ShopContextProvider>
   )
 }

@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import MenuDisplay from '../components/MenuDisplay'
 // import SideBar from '../components/SideBar'
-import { StateContext } from '../context/StateContext'
+import { ShopContext } from '../context/StateContext'
 
 export default function NewOrderPg ({ products }) {
   const navigate = useNavigate()
-  const [stateContext] = useContext(StateContext)
+  // const [ShopContext] = useContext(ShopContext)
 
   // const getCart = async () => {
   //   try {

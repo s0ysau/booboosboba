@@ -1,18 +1,18 @@
 import React, { createContext, useState, useReducer } from 'react'
 import { products } from '../utilities/products-api'
-export const StateContext = createContext()
+export const ShopContext = createContext()
 
 // export const StateDispatchContext = createContext();
 
 const getDefaultCart = () => {
-  const cart = {}
-  for (let i = 100; i < products.length + 1; i++) {
+  let cart = {}
+  for (let i = 1; i < products.length + 1; i++) {
     cart[i] = 0
   }
   return cart
 }
 
-export const StateProvider = (props) => {
+export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart())
 
   const addToCart = (productId) => {
@@ -23,20 +23,20 @@ export const StateProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [productId]: prev[productId] - 1 }))
   }
 
-  const stateContext = {
+  const contextValue = {
     cartItems,
+    setCartItems,
     addToCart,
     removeFromCart
   }
 
-  console.log(cartItems)
 
   return (
-    <StateContext.Provider value={[stateContext]}>
+    <ShopContext.Provider value={contextValue}>
       {/* <StateDispatchContext.Provider value={dispatch}> */}
       {props.children}
       {/* </StateDispatchContext.Provider> */}
-    </StateContext.Provider>
+    </ShopContext.Provider>
   )
 }
 

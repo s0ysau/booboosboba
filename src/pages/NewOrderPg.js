@@ -5,7 +5,7 @@ export default function NewOrderPg ({ products }) {
 
   return (
     <div>
-      <Header />
+      <Header products={products}/>
       <section>
         <MenuDisplay products={products} />
       </section>

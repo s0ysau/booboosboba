@@ -5,13 +5,13 @@ export default function StartPg () {
   const navigate = useNavigate()
 
   return (
-    <>
+    <section className='flex flex-col justify-center items-center'>
       <h1>Welcome to Booboo's Boba!</h1>
       <button
         onClick={() => navigate('/order')}
       >
         Click here to start your order
       </button>
-    </>
+    </section>
   )
 }

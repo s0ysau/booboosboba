@@ -12,6 +12,7 @@ export default function StartOverBtn () {
   }
 
   return (
-    <button onClick={() => handleCancelOrder()}>Start Over</button>
+    <button onClick={() => handleCancelOrder()}
+    className='rounded-full p-2 bg-red-600 text-white'>Start Over</button>
   )
 }

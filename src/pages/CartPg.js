@@ -4,9 +4,10 @@ import { ShopContext } from '../context/StateContext'
 import BackToMenuBtn from '../components/BackToMenuBtn'
 import CartItem from '../components/CartItem'
 import StartOverBtn from '../components/StartOverBtn'
-import CheckoutBtn from '../components/CheckoutBtn'
+// import CheckoutBtn from '../components/CheckoutBtn'
 import ContShopBtn from '../components/ContShopBtn'
-import Modal from '../components/PaymentModal'
+import Modal from '../components/Modal'
+import PaymentSection from '../components/PaymentSection'
 
 export default function CartPg() {
   const [checkOut, setCheckOut] = useState(false)
@@ -45,17 +46,16 @@ export default function CartPg() {
             </div>
           )
       }
+      <div>
       {
         checkOut
-        ? (
-          <Modal>
-            <section>
-              <h1>Payment</h1>
-              <p>Enter your payment information</p>
-            </section>
-          </Modal>
-        ) : null
+          ? (
+            <Modal>
+              <PaymentSection setCheckOut={setCheckOut}/>
+            </Modal>
+          ) : null
       }
+      </div>
     </section>
   )
 }

@@ -5,7 +5,6 @@ import StartPg from './StartPg'
 import NewOrderPg from './NewOrderPg'
 import SingleItemDisplay from '../components/SingleItemDisplay'
 import CartPg from './CartPg'
-import './App.css'
 
 export default function App () {
   return (

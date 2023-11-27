@@ -14,6 +14,10 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart())
+  const [name, setName] = useState(null)
+  const [phoneNum, setPhoneNum] = useState(null)
+
+
 
   const getTotalAmount = () => {
     let totalAmount = 0
@@ -44,7 +48,12 @@ export const ShopContextProvider = (props) => {
     addToCart,
     removeFromCart,
     emptyCart,
-    getTotalAmount
+    getTotalAmount,
+    name: name,
+    setName: setName,
+    phoneNum: phoneNum,
+    setPhoneNum: setPhoneNum,
+    
   }
 
   console.log(cartItems)

@@ -5,6 +5,7 @@ import StartPg from './StartPg'
 import NewOrderPg from './NewOrderPg'
 import SingleItemDisplay from '../components/SingleItemDisplay'
 import CartPg from './CartPg'
+import OrderCompletePg from './OrderCompletePg'
 
 export default function App () {
   return (
@@ -15,6 +16,7 @@ export default function App () {
         <Route path='/cart' element={<CartPg products={products} />} />
         <Route path='/:params' element={<SingleItemDisplay products={products} />} />
         <Route path='/*' element={<Navigate to='/' />} />
+        <Route path='/complete' element={<OrderCompletePg />} />
       </Routes>
     </ShopContextProvider>
   )

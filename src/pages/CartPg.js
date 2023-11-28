@@ -17,7 +17,7 @@ export default function CartPg() {
   return (
     <section>
       <h1 className='flex justify-center py-5'>Your Cart</h1>
-      <div>
+      <div className='flex flex-wrap justify-center'>
         {
           products.map((product) => {
             if (cartItems[product.id] !== 0) {
@@ -36,7 +36,7 @@ export default function CartPg() {
               <div className='flex flex-nowrap justify-evenly py-5'>
                 <StartOverBtn />
                 <ContShopBtn />
-                <button onClick={() => setCheckOut(true)} className='rounded-full bg-sky-300 px-[10px] py-[5px]'>Checkout</button>
+                <button onClick={() => setCheckOut(true)} className='rounded-full bg-green-500 px-[10px] py-[5px]'>Checkout</button>
               </div>
             </div>
 

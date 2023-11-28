@@ -1,11 +1,14 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/StateContext'
 import { products } from '../utilities/products-api'
 
 import ContShopBtn from './ContShopBtn'
 import OrderSummaryItem from './OrderSummaryItem'
+import OrderCompletePg from '../pages/OrderCompletePg'
 
 export default function PaymentSection({ setCheckOut }) {
+  const navigate = useNavigate()
   const { cartItems, getSubtotalAmount, name, setName, phoneNum, setPhoneNum, horizontalLine } = useContext(ShopContext)
   const SubtotalAmount = getSubtotalAmount()
 
@@ -20,7 +23,7 @@ export default function PaymentSection({ setCheckOut }) {
     if (name == null || name == "" || phoneNum == null || phoneNum == "") {
       alert('Please fill out the required fields.')
     } else {
-      alert(`Thank you for your order, ${name}! Your order will be ready in 15 minutes.`)
+      navigate('/complete')
     }
   }
 

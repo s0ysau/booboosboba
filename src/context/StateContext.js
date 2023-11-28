@@ -17,8 +17,6 @@ export const ShopContextProvider = (props) => {
   const [name, setName] = useState(null)
   const [phoneNum, setPhoneNum] = useState(null)
 
-
-
   const getSubtotalAmount = () => {
     let subTotalAmount = 0
     for (const item in cartItems) {

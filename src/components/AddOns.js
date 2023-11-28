@@ -9,8 +9,8 @@ export default function AddOns () {
   }
 
   return (
-    <>
-      <h1>Add Ons</h1>
+    <section className='flex flex-col px-5'>
+      <h1><b>Add Ons</b></h1>
       {
         addOns
           ? (
@@ -34,6 +34,6 @@ export default function AddOns () {
             )
           : 'Error'
       }
-    </>
+    </section>
   )
 }

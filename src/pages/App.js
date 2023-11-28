@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 export default function App() {
   return (
     <ShopContextProvider>
-      <div>
+      <div className='h-screen'>
         <Routes>
           <Route path='/' element={<StartPg />} />
           <Route path='/order' element={<NewOrderPg products={products} />} />

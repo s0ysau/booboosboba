@@ -10,9 +10,8 @@ export default function MenuDisplay ({ products }) {
 
   return (
     <>
-      <p>Menu Display component</p>
-      <div className='overflow-y-auto h-fit'>
-        <div className='grid grid-rows-4 grid-cols-3 gap-4'>
+      <div className='overflow-y-auto h-fit p-4'>
+        <div className='grid grid-rows-4 grid-cols-3 gap-4 justify-items-center	'>
           {item}
         </div>
       </div>

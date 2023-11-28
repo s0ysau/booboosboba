@@ -9,8 +9,8 @@ export default function SweetnessLvl () {
   }
 
   return (
-    <>
-      <h1>Sweetness Level</h1>
+    <section className='flex flex-col px-5'>
+      <h1><b>Sweetness Level</b></h1>
       {
         sweetness
           ? (
@@ -18,7 +18,7 @@ export default function SweetnessLvl () {
               {
               sweetness.map((sweet) => {
                 return (
-                  <div key={sweet.id} className='flex'>
+                  <div key={sweet.id} className='flex justify-items-around'>
                     <label>{sweet.name} &nbsp;
                       <input
                         checked={sweet.id === sweetLevel}
@@ -34,6 +34,6 @@ export default function SweetnessLvl () {
             )
           : 'Error'
       }
-    </>
+    </section>
   )
 }

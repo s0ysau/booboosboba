@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/StateContext'
 
-export default function StartPg () {
+export default function StartPg() {
   const { emptyCart, setName, setPhoneNum } = useContext(ShopContext)
   const navigate = useNavigate()
 
@@ -14,13 +14,16 @@ export default function StartPg () {
   }
 
   return (
-    <section className='flex flex-col justify-center items-center'>
-      <h1>Welcome to Booboo's Boba!</h1>
-      <button
-        onClick={() => handleReset()}
-      >
-        Click here to start your order
-      </button>
+    <section className="bg-[url('../public/images/startScreen.png')] h-screen">
+      <div className='flex flex-col items-center'>
+        <h1 className='text-8xl pt-10'>Welcome to Booboo's Boba!</h1>
+        <button
+        className=' rounded-full bg-white font-black my-20 px-[10px] py-[5px] text-3xl'
+          onClick={() => handleReset()}
+        >
+          Click here to start your order
+        </button>
+      </div>
     </section>
   )
 }

@@ -15,8 +15,8 @@ export default function CartPg() {
   const subTotalAmount = getSubtotalAmount()
 
   return (
-    <section>
-      <h1 className='flex justify-center py-5'>Your Shopping Cart</h1>
+    <section className='px-5'>
+      <h1 className='flex justify-center py-5 text-3xl'>Your Shopping Cart</h1>
       <div className='flex flex-col justify-center items-center'>
         {
           products.map((product) => {
@@ -30,7 +30,7 @@ export default function CartPg() {
         subTotalAmount > 0
           ? (
             <div className='py-3'>
-              <p className='flex justify-evenly py-1'><p>Subtotal:&nbsp;</p> <b>&nbsp; ${subTotalAmount}.00</b></p>
+              <p className='flex justify-evenly py-1'><p>Subtotal:&nbsp;</p> <b className="text-2xl">&nbsp; ${subTotalAmount}.00</b></p>
               <p className='flex justify-around py-1 text-slate-700 text-xs'>Taxes and Total will be calculated at checkout.</p>
               <div className='flex flex-nowrap justify-evenly py-20'>
                 <StartOverBtn />
@@ -41,10 +41,12 @@ export default function CartPg() {
 
           )
           : (
-            <div>
+            <section>
               <BackToMenuBtn />
-              <h1>Your cart is empty</h1>
+            <div className='flex justify-center'>
+              <h1 className='text-lg text-red-600'>Your cart is empty</h1>
             </div>
+            </section>
           )
       }
       <div>

@@ -9,8 +9,8 @@ export default function IceLvl () {
   }
 
   return (
-    <>
-      <h1>Ice Level</h1>
+    <section className='flex flex-col px-5'>
+      <h1><b>Ice Level</b></h1>
       {
         ice
           ? (
@@ -34,6 +34,6 @@ export default function IceLvl () {
             )
           : 'Error'
       }
-    </>
+    </section>
   )
 }

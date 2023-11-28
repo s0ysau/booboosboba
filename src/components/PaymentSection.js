@@ -20,7 +20,7 @@ export default function PaymentSection({ setCheckOut }) {
       phoneNum: phoneNum,
     }
 
-    if (name == null || name == "" || phoneNum == null || phoneNum == "") {
+    if (name == null || name == "" || phoneNum == null || phoneNum == "" || phoneNum.length < 10) {
       alert('Please fill out the required fields.')
     } else {
       navigate('/complete')
@@ -48,7 +48,8 @@ export default function PaymentSection({ setCheckOut }) {
         </label>
         <label>
           Phone Number:
-          <input type='text' placeholder='Phone Number*' value={phoneNum} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          <input type='number' placeholder='Phone Number*' value={phoneNum} minlength="10"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             onChange={evt => setPhoneNum(evt.target.value)} />
         </label>
         <p className='text-red-700 italic'>* Required</p>
@@ -66,7 +67,7 @@ export default function PaymentSection({ setCheckOut }) {
       </div>
       <hr style={horizontalLine} />
       <p className='flex justify-between py-1'><p>Subtotal:&nbsp;</p><p> &nbsp; ${SubtotalAmount}.00</p></p>
-      <p className='flex justify-between py-1'><p>Tax:&nbsp;</p> <p> &nbsp; ${(SubtotalAmount * 0.07).toFixed(2)}</p></p>
+      <p className='flex justify-between py-1'><p>Tax (7%):&nbsp;</p> <p> &nbsp; ${(SubtotalAmount * 0.07).toFixed(2)}</p></p>
       <hr style={horizontalLine} />
       <p className='flex justify-between pt-1'><b>Order Total:</b>&nbsp; <b>&nbsp; ${(SubtotalAmount * 1.07).toFixed(2)}</b></p>
 

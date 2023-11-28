@@ -3,12 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 // import AddToCartBtn from './AddToCartBtn'
 import BackToMenuBtn from './BackToMenuBtn'
 import { ShopContext } from '../context/StateContext'
-// import AddOns from './AddOns'
-// import SweetnessLvl from './SweetnessLvl'
-// import IceLvl from './IceLvl'
+import AddOns from './AddOns'
+import SweetnessLvl from './SweetnessLvl'
+import IceLvl from './IceLvl'
 
-export default function SingleItemDisplay () {
-  const { cartItems, addToCart } = useContext(ShopContext)
+export default function SingleItemDisplay() {
+  const { addToCart } = useContext(ShopContext)
   const location = useLocation()
   const { value } = location.state
   const navigate = useNavigate()
@@ -19,30 +19,30 @@ export default function SingleItemDisplay () {
   }
 
   return (
-    <>
+    <section className='p-3'>
       <BackToMenuBtn />
-      <section className='p-2'>
-        <div key={value.id} className='flex flex-row gap-x-4'>
-          <section className='basis-1/4'>
-            <img src={process.env.PUBLIC_URL + `${value.img}`} alt={value.name} className='w-[250px] h-[300px]' />
+      <section className='pt-10'>
+        <div key={value.id} className='flex flex-row gap-x-4 justify-center'>
+          <section className='basis-1/4 '>
+            <img src={process.env.PUBLIC_URL + `${value.img}`} alt={value.name} className='w-[300px] h-[400px]' />
           </section>
           <section className='basis-1/2'>
-            <h1 className='font-bold text-xl'><b>{value.name}</b></h1>
-            <p>{value.description}</p>
-            <h2 className='text-lg'>${value.price}.00</h2>
-            {/* <section>
+            <h1 className='font-bold text-4xl pb-4'><b>{value.name}</b></h1>
+            <p className='py-3'>{value.description}</p>
+            <h2 className='text-xl py-4'>${value.price}.00</h2>
+            <section className='flex flex-row justify-center '>
               <SweetnessLvl />
               <IceLvl />
+              <AddOns />
             </section>
-            <AddOns /> */}
             <button
               onClick={() => handleAddToCart()}
-              className='rounded-full bg-sky-300 px-[10px] py-[5px]'
+              className='rounded-full bg-sky-300 mt-5 px-[10px] py-[5px]'
             >Add To Cart
             </button>
           </section>
         </div>
       </section>
-    </>
+    </section>
   )
 }

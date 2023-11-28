@@ -19,15 +19,15 @@ export const ShopContextProvider = (props) => {
 
 
 
-  const getTotalAmount = () => {
-    let totalAmount = 0
+  const getSubtotalAmount = () => {
+    let subTotalAmount = 0
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         const itemInfo = products.find((product) => product.id === Number(item))
-        totalAmount += itemInfo.price * cartItems[item]
+        subTotalAmount += itemInfo.price * cartItems[item]
       }
     }
-    return totalAmount
+    return subTotalAmount
   }
 
   const addToCart = (productId) => {
@@ -48,12 +48,19 @@ export const ShopContextProvider = (props) => {
     addToCart,
     removeFromCart,
     emptyCart,
-    getTotalAmount,
+    getSubtotalAmount,
     name: name,
     setName: setName,
     phoneNum: phoneNum,
     setPhoneNum: setPhoneNum,
-    
+
+    horizontalLine: {
+      height: '2px',
+      width: '100%',
+      borderWidth: '1px',
+      color: 'gray',
+      backgroundColor: 'gray'
+    }
   }
 
   console.log(cartItems)

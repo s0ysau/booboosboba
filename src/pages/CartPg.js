@@ -11,8 +11,8 @@ import PaymentSection from '../components/PaymentSection'
 
 export default function CartPg() {
   const [checkOut, setCheckOut] = useState(false)
-  const { cartItems, getTotalAmount } = useContext(ShopContext)
-  const totalAmount = getTotalAmount()
+  const { cartItems, getSubtotalAmount } = useContext(ShopContext)
+  const subTotalAmount = getSubtotalAmount()
 
   return (
     <section>
@@ -27,10 +27,12 @@ export default function CartPg() {
         }
       </div>
       {
-        totalAmount > 0
+        subTotalAmount > 0
           ? (
             <div className='py-3'>
-              <p className='flex justify-center'>Subtotal:&nbsp; <b>&nbsp; ${totalAmount}.00</b></p>
+              <p className='flex justify-around py-1'><p>Subtotal:&nbsp;</p> <b>&nbsp; ${subTotalAmount}.00</b></p>
+              <p className='flex justify-around py-1'><p>Tax:&nbsp;</p> <b>&nbsp; ${(subTotalAmount * 0.07).toFixed(2)}</b></p>
+              <p className='flex justify-around py-1'><p>Total:&nbsp;</p> <b>&nbsp; ${(subTotalAmount * 1.07).toFixed(2)}</b></p>
               <div className='flex flex-nowrap justify-evenly py-5'>
                 <StartOverBtn />
                 <ContShopBtn />

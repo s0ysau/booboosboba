@@ -16,8 +16,8 @@ export default function CartPg() {
 
   return (
     <section>
-      <h1 className='flex justify-center py-5'>Your Cart</h1>
-      <div className='flex flex-wrap justify-center'>
+      <h1 className='flex justify-center py-5'>Your Shopping Cart</h1>
+      <div className='flex flex-col justify-center items-center'>
         {
           products.map((product) => {
             if (cartItems[product.id] !== 0) {
@@ -30,10 +30,9 @@ export default function CartPg() {
         subTotalAmount > 0
           ? (
             <div className='py-3'>
-              <p className='flex justify-around py-1'><p>Subtotal:&nbsp;</p> <b>&nbsp; ${subTotalAmount}.00</b></p>
-              <p className='flex justify-around py-1'><p>Tax:&nbsp;</p> <b>&nbsp; ${(subTotalAmount * 0.07).toFixed(2)}</b></p>
-              <p className='flex justify-around py-1'><p>Total:&nbsp;</p> <b>&nbsp; ${(subTotalAmount * 1.07).toFixed(2)}</b></p>
-              <div className='flex flex-nowrap justify-evenly py-5'>
+              <p className='flex justify-evenly py-1'><p>Subtotal:&nbsp;</p> <b>&nbsp; ${subTotalAmount}.00</b></p>
+              <p className='flex justify-around py-1 text-slate-700 text-xs'>Taxes and Total will be calculated at checkout.</p>
+              <div className='flex flex-nowrap justify-evenly py-20'>
                 <StartOverBtn />
                 <ContShopBtn />
                 <button onClick={() => setCheckOut(true)} className='rounded-full bg-green-500 px-[10px] py-[5px]'>Checkout</button>

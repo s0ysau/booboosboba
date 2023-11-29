@@ -5,7 +5,11 @@ module.exports = {
     './public/index.html'
   ],
   theme: {
-    
+    extend: {
+      fontFamily: {
+        'script': 'Pacifico'
+      }
+    }
   },
   plugins: []
 }

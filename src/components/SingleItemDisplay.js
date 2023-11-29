@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/StateContext'
 // import AddToCartBtn from './AddToCartBtn'
@@ -22,7 +22,7 @@ export default function SingleItemDisplay() {
   return (
     <section >
       <Header />
-      <BackToMenuBtn className='p-3'/>
+      <BackToMenuBtn />
       <section className='pt-10'>
         <div key={value.id} className='flex flex-row gap-x-4 justify-center'>
           <section className='basis-1/4 '>

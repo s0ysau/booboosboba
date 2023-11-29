@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'script': 'Pacifico'
+        script: 'Pacifico'
       }
     }
   },

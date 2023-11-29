@@ -9,7 +9,7 @@ import ContShopBtn from '../components/ContShopBtn'
 import Modal from '../components/Modal'
 import PaymentSection from '../components/PaymentSection'
 
-export default function CartPg() {
+export default function CartPg () {
   const [checkOut, setCheckOut] = useState(false)
   const { cartItems, getSubtotalAmount } = useContext(ShopContext)
   const subTotalAmount = getSubtotalAmount()
@@ -30,7 +30,7 @@ export default function CartPg() {
         subTotalAmount > 0
           ? (
             <div className='py-3'>
-              <p className='flex justify-evenly py-1'><p>Subtotal:&nbsp;</p> <b className="text-2xl">&nbsp; ${subTotalAmount}.00</b></p>
+              <p className='flex justify-evenly py-1'><p>Subtotal:&nbsp;</p> <b className='text-2xl'>&nbsp; ${subTotalAmount}.00</b></p>
               <p className='flex justify-around py-1 text-slate-700 text-xs'>Taxes and Total will be calculated at checkout.</p>
               <div className='flex flex-nowrap justify-evenly py-20'>
                 <StartOverBtn />
@@ -39,24 +39,25 @@ export default function CartPg() {
               </div>
             </div>
 
-          )
+            )
           : (
             <section>
               <BackToMenuBtn />
-            <div className='flex justify-center'>
-              <h1 className='text-lg text-red-600'>Your cart is empty</h1>
-            </div>
+              <div className='flex justify-center'>
+                <h1 className='text-lg text-red-600'>Your cart is empty</h1>
+              </div>
             </section>
-          )
+            )
       }
       <div>
-      {
+        {
         checkOut
           ? (
             <Modal>
-              <PaymentSection setCheckOut={setCheckOut}/>
+              <PaymentSection setCheckOut={setCheckOut} />
             </Modal>
-          ) : null
+            )
+          : null
       }
       </div>
     </section>

@@ -47,10 +47,10 @@ export const ShopContextProvider = (props) => {
     removeFromCart,
     emptyCart,
     getSubtotalAmount,
-    name: name,
-    setName: setName,
-    phoneNum: phoneNum,
-    setPhoneNum: setPhoneNum,
+    name,
+    setName,
+    phoneNum,
+    setPhoneNum,
 
     horizontalLine: {
       height: '2px',

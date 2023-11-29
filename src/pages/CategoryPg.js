@@ -8,14 +8,14 @@ export default function CategoryPg ({ products, categories }) {
   const { params } = useParams()
 
   return (
-      <div>
-        <Header />
-        <section className='grid grid-cols-3 gap-4'>
-          <SideBar categories={categories} />
-        </section>
-        <h1>{params}</h1>
-        <section className='col-span-2'>
-          {
+    <div>
+      <Header />
+      <section className='grid grid-cols-3 gap-4'>
+        <SideBar categories={categories} />
+      </section>
+      <h1>{params}</h1>
+      <section className='col-span-2'>
+        {
             products
               ? (
                 <ul>
@@ -39,8 +39,8 @@ export default function CategoryPg ({ products, categories }) {
                 )
               : 'error'
           }
-        </section>
-      </div>
+      </section>
+    </div>
   )
 }
 

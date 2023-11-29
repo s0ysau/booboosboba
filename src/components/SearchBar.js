@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function SearchBar ({products}) {
+export default function SearchBar ({ products }) {
   const [searchInput, setSearchInput] = useState('')
 
   const handleChange = (evt) => {
@@ -17,11 +17,12 @@ export default function SearchBar ({products}) {
   }
 
   return (
-    <input 
-    type='search' 
-    onChange={(evt) => handleChange(evt)}
-    value={searchInput}
-    placeholder=' Search' 
-    className='w-1/2 ml-[10px] p-1 border-solid border-2 rounded-lg' />
+    <input
+      type='search'
+      onChange={(evt) => handleChange(evt)}
+      value={searchInput}
+      placeholder=' Search'
+      className='w-1/2 ml-[10px] p-1 border-solid border-2 rounded-lg'
+    />
   )
 }

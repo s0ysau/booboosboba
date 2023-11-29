@@ -5,22 +5,20 @@ import { products } from '../utilities/products-api'
 
 import ContShopBtn from './ContShopBtn'
 import OrderSummaryItem from './OrderSummaryItem'
-import OrderCompletePg from '../pages/OrderCompletePg'
 
-export default function PaymentSection({ setCheckOut }) {
+export default function PaymentSection ({ setCheckOut }) {
   const navigate = useNavigate()
   const { cartItems, getSubtotalAmount, name, setName, phoneNum, setPhoneNum, horizontalLine } = useContext(ShopContext)
   const SubtotalAmount = getSubtotalAmount()
 
-
   const digitalpayment = (evt) => {
     evt.preventDefault()
     const formData = {
-      name: name,
-      phoneNum: phoneNum,
+      name,
+      phoneNum
     }
 
-    if (name == null || name == "" || phoneNum == null || phoneNum == "" || phoneNum.length < 10) {
+    if (name == null || name == '' || phoneNum == null || phoneNum == '' || phoneNum.length < 10) {
       alert('Please fill out the required fields.')
     } else {
       navigate('/complete')
@@ -31,9 +29,10 @@ export default function PaymentSection({ setCheckOut }) {
     <section style={
       {
         backgroundColor: 'white',
-        padding: '2rem',
+        padding: '2rem'
       }
-    }>
+    }
+    >
       <section className='flex flex-nowrap justify-between py-3'>
         <button onClick={() => setCheckOut(false)} className='rounded-full py-1 px-3 bg-black text-white'>	&lt; Back To Cart</button>
         <ContShopBtn />
@@ -43,14 +42,18 @@ export default function PaymentSection({ setCheckOut }) {
         <p>Enter Contact Information</p>
         <label>
           Name:
-          <input type='text' placeholder='Name*' value={name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            onChange={evt => setName(evt.target.value)} />
+          <input
+            type='text' placeholder='Name*' value={name} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            onChange={evt => setName(evt.target.value)}
+          />
         </label>
         <label>
           Phone Number:
-          <input type='number' placeholder='Phone Number*' value={phoneNum} minlength="10"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            onChange={evt => setPhoneNum(evt.target.value)} />
+          <input
+            type='number' placeholder='Phone Number*' value={phoneNum} minlength='10'
+            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            onChange={evt => setPhoneNum(evt.target.value)}
+          />
         </label>
         <p className='text-red-700 italic'>* Required</p>
       </section>
@@ -70,7 +73,6 @@ export default function PaymentSection({ setCheckOut }) {
       <p className='flex justify-between py-1'><p>Tax (7%):&nbsp;</p> <p> &nbsp; ${(SubtotalAmount * 0.07).toFixed(2)}</p></p>
       <hr style={horizontalLine} />
       <p className='flex justify-between pt-1'><b>Order Total:</b>&nbsp; <b>&nbsp; ${(SubtotalAmount * 1.07).toFixed(2)}</b></p>
-
 
       <p className='text-lg pt-5'>Ways to pay</p>
       <section className='flex flex-nowrap justify-around py-3'>

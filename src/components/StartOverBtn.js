@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/StateContext'
 
 export default function StartOverBtn () {
-  const { emptyCart, name, setName, phoneNum, setPhoneNum } = useContext(ShopContext)
+  const { emptyCart, setName, setPhoneNum } = useContext(ShopContext)
   const navigate = useNavigate()
 
   const handleCancelOrder = () => {
@@ -14,7 +14,10 @@ export default function StartOverBtn () {
   }
 
   return (
-    <button onClick={() => handleCancelOrder()}
-    className='rounded-full p-2 bg-red-600 text-white'>Start Over</button>
+    <button
+      onClick={() => handleCancelOrder()}
+      className='rounded-full p-2 bg-red-600 text-white'
+    >Start Over
+    </button>
   )
 }

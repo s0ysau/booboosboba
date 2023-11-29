@@ -8,7 +8,7 @@ import CartPg from './CartPg'
 import OrderCompletePg from './OrderCompletePg'
 import Footer from '../components/Footer'
 
-export default function App() {
+export default function App () {
   return (
     <ShopContextProvider>
       <div className='h-screen'>

@@ -6,20 +6,33 @@ export default function Footer () {
         <p>Logo</p>
         <div className='px-10'>
           <h1>SOCIAL MEDIA</h1>
+          <a
+            className='flex no-underline'
+            href='https://www.linkedin.com/in/jerricklc/'
+            target='_blank' rel='noreferrer'
+          ><span className='text-center'>Linkedin</span>
+          </a>
           <p>Instagram</p>
           <p>Facebook</p>
           <p>twitter</p>
-          <p>linkedin</p>
         </div>
         <div className='px-10'>
           <h1>COMPANY</h1>
-          <p>About</p>
-          <p>2</p>
-          <p>3</p>
+          <a
+            className='flex no-underline'
+            href='https://jerricklc.netlify.app/'
+            target='_blank' rel='noreferrer'
+          ><span className='text-center'>About</span>
+          </a>
         </div>
         <div className='px-10'>
           <h1>USEFUL LINKS</h1>
-          <p>GitHub</p>
+          <a
+            className='flex no-underline'
+            href='https://github.com/s0ysau/booboosboba#readme'
+            target='_blank' rel='noreferrer'
+          ><span className='text-center'>Github</span>
+          </a>
           <p>Terms of Use</p>
           <p>Privacy Policy</p>
         </div>

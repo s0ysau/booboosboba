@@ -20,7 +20,7 @@ export default function App () {
           <Route path='/*' element={<Navigate to='/' />} />
           <Route path='/complete' element={<OrderCompletePg />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ShopContextProvider>
   )

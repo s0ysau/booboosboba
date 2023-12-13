@@ -16,6 +16,8 @@ export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart())
   const [name, setName] = useState(null)
   const [phoneNum, setPhoneNum] = useState(null)
+  const [searchInput, setSearchInput] = useState('')
+  const [searchResults, setSearchResults] = useState([])
 
   const getSubtotalAmount = () => {
     let subTotalAmount = 0
@@ -51,6 +53,10 @@ export const ShopContextProvider = (props) => {
     setName,
     phoneNum,
     setPhoneNum,
+    searchInput,
+    setSearchInput,
+    searchResults,
+    setSearchResults,
 
     horizontalLine: {
       height: '2px',

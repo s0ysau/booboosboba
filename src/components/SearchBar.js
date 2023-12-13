@@ -30,7 +30,7 @@ export default function SearchBar () {
       onChange={(evt) => handleChange(evt)}
       value={searchInput}
       placeholder=' Search'
-      className='w-1/2 ml-[10px] p-1 border-solid border-2 rounded-lg'
+      className='w-full ml-[10px] p-1 border-solid border-2 rounded-lg'
     />
   )
 }

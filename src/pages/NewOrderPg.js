@@ -3,11 +3,11 @@ import MenuDisplay from '../components/MenuDisplay'
 
 export default function NewOrderPg ({ products }) {
   return (
-    <div>
-      <Header products={products} />
-      <section>
+    <section>
+      <Header products={products} className='absolute'/>
+      <div>
         <MenuDisplay products={products} />
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

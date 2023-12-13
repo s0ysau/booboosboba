@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { ShopContext } from '../context/StateContext'
+import { products } from '../utilities/products-api'
 
-export default function SearchBar ({ products }) {
-  const [searchInput, setSearchInput] = useState('')
-
-  const handleChange = (evt) => {
-    evt.preventDefault()
-    setSearchInput(evt.target.value)
+export default function SearchBar () {
+  const { searchInput, setSearchInput, setSearchResults } = useContext(ShopContext)
+  
+  const fetchSearch = (value) => {
+    const results =  products.filter((product) => {
+      product.name.match(searchInput)
+      return ( value && 
+        product.name && 
+        product.name.toLowerCase().includes(value) 
+      )
+    })
+    setSearchResults(results)
   }
 
-  if (searchInput.length > 0) {
-    products.filter((product) => {
-      product.name.match(searchInput)
-      return <Link to={`/${searchInput}`} />
-    })
+  const handleChange = (evt) => {
+    // evt.preventDefault()
+    setSearchInput(evt.target.value)
+    fetchSearch(evt.target.value)
   }
 
   return (
@@ -22,7 +28,7 @@ export default function SearchBar ({ products }) {
       onChange={(evt) => handleChange(evt)}
       value={searchInput}
       placeholder=' Search'
-      className='w-1/2 ml-[10px] p-1 border-solid border-2 rounded-lg'
+      className='w-full ml-[10px] p-1 border-solid border-2 rounded-lg'
     />
   )
 }

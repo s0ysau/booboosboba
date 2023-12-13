@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
 import { ShopContext } from '../context/StateContext'
 import { products } from '../utilities/products-api'
 
@@ -12,14 +11,13 @@ export default function SearchBar () {
       return ( value && 
         product.name && 
         product.name.toLowerCase().includes(value) 
-      // <Link to={`/${searchInput}`} />
       )
     })
     setSearchResults(results)
   }
 
   const handleChange = (evt) => {
-    evt.preventDefault()
+    // evt.preventDefault()
     setSearchInput(evt.target.value)
     fetchSearch(evt.target.value)
   }

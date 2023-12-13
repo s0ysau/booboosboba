@@ -2,6 +2,9 @@
 
 This project was created using the MERN stack. 
 
+## Live Site
+
+[Click here to view](https://booboos-boba.netlify.app/)
 
 ## Objective
 
